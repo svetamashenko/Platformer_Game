@@ -97,3 +97,22 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+/.vs
+*.exe
+*.log
+*.bin
+*.apk
+/Library/
+/Temp/
+/Assets/VSCode*
+/obj/
+/out
+/.vscode/
+*.sln
+*.userprefs
+*.csproj
+/.idea
+*.iml
+*.DotSettings.user
+/Assets/Plugins/Editor/JetBrains*
