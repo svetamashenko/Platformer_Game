@@ -177,10 +177,10 @@ TextureImporter:
       name: Hero_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 672
-        width: 96
-        height: 96
+        x: 21
+        y: 703
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +198,10 @@ TextureImporter:
       name: Hero_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 672
-        width: 96
-        height: 96
+        x: 117
+        y: 703
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Hero_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 672
-        width: 96
-        height: 96
+        x: 213
+        y: 703
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,10 +240,10 @@ TextureImporter:
       name: Hero_3
       rect:
         serializedVersion: 2
-        x: 288
-        y: 672
-        width: 96
-        height: 96
+        x: 309
+        y: 703
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +261,10 @@ TextureImporter:
       name: Hero_4
       rect:
         serializedVersion: 2
-        x: 384
-        y: 672
-        width: 96
-        height: 96
+        x: 405
+        y: 703
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +282,10 @@ TextureImporter:
       name: Hero_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 576
-        width: 96
-        height: 96
+        x: 21
+        y: 607
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,10 +303,10 @@ TextureImporter:
       name: Hero_6
       rect:
         serializedVersion: 2
-        x: 96
-        y: 576
-        width: 96
-        height: 96
+        x: 117
+        y: 607
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,10 +324,10 @@ TextureImporter:
       name: Hero_7
       rect:
         serializedVersion: 2
-        x: 192
-        y: 576
-        width: 96
-        height: 96
+        x: 213
+        y: 607
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,10 +345,10 @@ TextureImporter:
       name: Hero_8
       rect:
         serializedVersion: 2
-        x: 288
-        y: 576
-        width: 96
-        height: 96
+        x: 309
+        y: 607
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,10 +366,10 @@ TextureImporter:
       name: Hero_9
       rect:
         serializedVersion: 2
-        x: 384
-        y: 576
-        width: 96
-        height: 96
+        x: 405
+        y: 607
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,10 +387,10 @@ TextureImporter:
       name: Hero_10
       rect:
         serializedVersion: 2
-        x: 480
-        y: 576
-        width: 96
-        height: 96
+        x: 501
+        y: 607
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,10 +408,10 @@ TextureImporter:
       name: Hero_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 480
-        width: 96
-        height: 96
+        x: 21
+        y: 511
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,10 +429,10 @@ TextureImporter:
       name: Hero_12
       rect:
         serializedVersion: 2
-        x: 96
-        y: 480
-        width: 96
-        height: 96
+        x: 117
+        y: 511
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,10 +450,10 @@ TextureImporter:
       name: Hero_13
       rect:
         serializedVersion: 2
-        x: 192
-        y: 480
-        width: 96
-        height: 96
+        x: 213
+        y: 511
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,10 +471,10 @@ TextureImporter:
       name: Hero_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
-        width: 96
-        height: 96
+        x: 21
+        y: 415
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -492,10 +492,10 @@ TextureImporter:
       name: Hero_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 288
-        width: 96
-        height: 96
+        x: 21
+        y: 319
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -513,10 +513,10 @@ TextureImporter:
       name: Hero_16
       rect:
         serializedVersion: 2
-        x: 96
-        y: 288
-        width: 96
-        height: 96
+        x: 117
+        y: 319
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -534,10 +534,10 @@ TextureImporter:
       name: Hero_17
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 96
-        height: 96
+        x: 21
+        y: 223
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -555,10 +555,10 @@ TextureImporter:
       name: Hero_18
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
-        width: 96
-        height: 96
+        x: 117
+        y: 223
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -576,10 +576,10 @@ TextureImporter:
       name: Hero_19
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 96
-        height: 96
+        x: 213
+        y: 223
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -597,10 +597,10 @@ TextureImporter:
       name: Hero_20
       rect:
         serializedVersion: 2
-        x: 288
-        y: 192
-        width: 96
-        height: 96
+        x: 309
+        y: 223
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -618,10 +618,10 @@ TextureImporter:
       name: Hero_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 96
-        height: 96
+        x: 21
+        y: 127
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -639,10 +639,10 @@ TextureImporter:
       name: Hero_22
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 96
-        height: 96
+        x: 117
+        y: 127
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -660,10 +660,10 @@ TextureImporter:
       name: Hero_23
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
-        width: 96
-        height: 96
+        x: 213
+        y: 127
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -681,10 +681,10 @@ TextureImporter:
       name: Hero_24
       rect:
         serializedVersion: 2
-        x: 288
-        y: 96
-        width: 96
-        height: 96
+        x: 309
+        y: 127
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -702,10 +702,10 @@ TextureImporter:
       name: Hero_25
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
-        height: 96
+        x: 21
+        y: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -723,10 +723,10 @@ TextureImporter:
       name: Hero_26
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 96
-        height: 96
+        x: 117
+        y: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -744,10 +744,10 @@ TextureImporter:
       name: Hero_27
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 96
-        height: 96
+        x: 213
+        y: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -765,10 +765,10 @@ TextureImporter:
       name: Hero_28
       rect:
         serializedVersion: 2
-        x: 288
-        y: 0
-        width: 96
-        height: 96
+        x: 309
+        y: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
