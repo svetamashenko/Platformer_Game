@@ -13,6 +13,6 @@ public class HeroInputReader : MonoBehaviour
 
     private void OnSaySomething(InputValue context)
     {
-        _hero.SaySomething();
+        Hero.SaySomething();
     }
 }
