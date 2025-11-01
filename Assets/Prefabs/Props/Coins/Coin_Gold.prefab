@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7882505375604682368}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -161,7 +161,6 @@ MonoBehaviour:
     - {fileID: 3444832735345940322, guid: 3bc0044924338644a97827f106515d07, type: 3}
     AllowNext: 0
     NextStateName: 
-  _sourceAnimation: {fileID: 0}
   _frameRate: 10
   _onComplete:
     m_PersistentCalls:

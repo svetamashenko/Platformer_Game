@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
 
 namespace PixelCrew
 {
@@ -18,6 +18,17 @@ namespace PixelCrew
         private int _currentSpriteIndex;
         private float _nextFrameTime;
         private bool _isPlaying = true;
+
+
+        private void OnBecomeVisible()
+        {
+            enabled = _isPlaying;
+        }
+
+        private void OnBecomeInvisible()
+        {
+            enabled = false;
+        }
 
         private void Start()
         {
@@ -73,6 +84,8 @@ namespace PixelCrew
                 _nextFrameTime = Time.time + _secondsPerFrame;
                 _isPlaying = true;
             }
+
+            enabled = _isPlaying = false;
         }
 
         private AnimationState FindStateByName(string name)

@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 219267967784211574}
   - component: {fileID: 219267967784211575}
   - component: {fileID: 219267967784211572}
-  m_Layer: 9
+  - component: {fileID: 127108488}
+  m_Layer: 0
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -115,7 +116,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _jumpSpeed: 12
+  _damageJumpSpeed: 30
   _groundCheck: {fileID: 219267969013866866}
+  _interactionRadius: 1
+  _interactionLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &219267967784211569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +167,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 219267967784211568}
         m_MethodName: OnSaySomething
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -172,6 +178,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ff370202-c38f-4cc6-9cf6-5f1d05408e30
     m_ActionName: Hero/SaySomething[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c404c58f-c90d-47b2-9191-555a855a016e
+    m_ActionName: Hero/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -190,8 +200,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0060175657, y: 0.06139207}
-  m_Size: {x: 0.72369075, y: 0.8689066}
+  m_Offset: {x: -0.0060175657, y: 0.070913255}
+  m_Size: {x: 0.72369075, y: 0.84986424}
   m_Direction: 0
 --- !u!50 &219267967784211575
 Rigidbody2D:
@@ -233,6 +243,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &127108488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219267967784211564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330a804a239d6f54caac34b6b62e45b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 5
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 219267967784211571}
+        m_MethodName: TakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 9
 --- !u!1 &219267969013866861
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +299,7 @@ GameObject:
   - component: {fileID: 219267969013866864}
   - component: {fileID: 219267969013866867}
   - component: {fileID: 219267969013866866}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
