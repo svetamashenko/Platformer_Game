@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7882505375604682369}
   - component: {fileID: 7882505375604682375}
   - component: {fileID: 7882505375604682374}
+  - component: {fileID: 8246238571443641360}
   - component: {fileID: 7882505375604682372}
   - component: {fileID: 7882505375604682373}
   m_Layer: 0
@@ -101,6 +102,19 @@ CircleCollider2D:
   m_Offset: {x: 0.019357562, y: 0.021293342}
   serializedVersion: 2
   m_Radius: 0.16676247
+--- !u!114 &8246238571443641360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7882505375604682368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508c74d6ffd74834785cf60cf169893e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 7882505375604682368}
 --- !u!114 &7882505375604682372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,12 +131,12 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8246238571443641360}
         m_MethodName: DestroyObject
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 7882505375604682368}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

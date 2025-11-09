@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-
+﻿using PixelCrew.Components;
+using UnityEngine;
 
 namespace PixelCrew
 {
@@ -12,6 +12,13 @@ namespace PixelCrew
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
 
+        [SerializeField] private SpawnComponent _footStepParticles;
+        [SerializeField] private SpawnComponent _jumpParticles;
+        [SerializeField] private SpawnComponent _fallParticles;
+
+        [SerializeField] private int _coins = 0;
+        [SerializeField] private ParticleSystem _hitParticles;
+
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private readonly Collider2D[] _interactionResults = new Collider2D[1];
@@ -19,13 +26,17 @@ namespace PixelCrew
         private Animator _animator;
         private static readonly int IsGroundedKey = Animator.StringToHash("is_grounded");
         private static readonly int IsRunningKey = Animator.StringToHash("is_running");
-
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical_velocity");
         private static readonly int HitKey = Animator.StringToHash("hit");
 
-        private SpriteRenderer _sprite;
+
         private bool _isGrounded;
         private bool _allowDoubleJump;
+
+        [SerializeField] private float _fallSpeed;
+        [SerializeField] private float _minFallSpeed = 1f;
+        private bool _hasSpawnedFallParticles;
+
 
         public void SetDirection(Vector2 direction)
         {
@@ -36,7 +47,6 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _sprite = GetComponent<SpriteRenderer>();
         }
 
         private void FixedUpdate()
@@ -45,17 +55,23 @@ namespace PixelCrew
             var yVelocity = CalculateVelocity();
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
-
             _animator.SetBool(IsGroundedKey, _isGrounded);
             _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
             _animator.SetBool(IsRunningKey, _direction.x != 0);
 
             UpdateSpriteDirection();
+
+            _isGrounded = IsGrounded();
+
+            if (_isGrounded && !_hasSpawnedFallParticles && _fallSpeed > _minFallSpeed)
+            {
+                _fallParticles.Spawn();
+                _hasSpawnedFallParticles = true;
+            }
         }
 
         private void Update()
         {
-            _isGrounded = IsGrounded();
         }
 
         private float CalculateVelocity()
@@ -63,7 +79,16 @@ namespace PixelCrew
             var yVelocity = _rigidbody.velocity.y;
             var isJumpPressing = _direction.y > 0;
 
-            if (_isGrounded) _allowDoubleJump = true;
+            if (_isGrounded)
+            {
+                _allowDoubleJump = true;
+                _fallSpeed = 0f;
+                _hasSpawnedFallParticles = false;
+            }
+            else if (_rigidbody.velocity.y < -_fallSpeed)
+            {
+                _fallSpeed = -_rigidbody.velocity.y;
+            }
 
             if (isJumpPressing)
             {
@@ -73,6 +98,7 @@ namespace PixelCrew
             {
                 yVelocity *= 0.5f;
             }
+
             return yVelocity;
         }
 
@@ -84,24 +110,27 @@ namespace PixelCrew
             if (_isGrounded)
             {
                 yVelocity += _jumpSpeed;
+                _jumpParticles.Spawn();
             }
             else if (_allowDoubleJump)
             {
                 yVelocity = _jumpSpeed;
+                _jumpParticles.Spawn();
                 _allowDoubleJump = false;
             }
             return yVelocity;
         }
 
+
         private void UpdateSpriteDirection()
         {
             if (_direction.x > 0)
             {
-                _sprite.flipX = false;
+                transform.localScale = Vector3.one;
             }
             else if (_direction.x < 0)
             {
-                _sprite.flipX = true;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
         }
 
@@ -119,7 +148,27 @@ namespace PixelCrew
         {
             _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
+
+            if (_coins > 0)
+            {
+                SpawnCoins();
+            }
         }
+
+        private void SpawnCoins()
+        {
+            var numCoinsToDispose = Mathf.Min(_coins, 5);
+            _coins -= numCoinsToDispose;
+            ShowBalance();
+
+            var burst = _hitParticles.emission.GetBurst(0);
+            burst.count = numCoinsToDispose;
+            _hitParticles.emission.SetBurst(0, burst);
+
+            _hitParticles.gameObject.SetActive(true);
+            _hitParticles.Play();
+        }
+
         public void Interact()
         {
             var size = Physics2D.OverlapCircleNonAlloc(
@@ -137,6 +186,27 @@ namespace PixelCrew
                     interactable.Interact();
                 }
             }
+        }
+
+        public void SpawnFootStepDust()
+        {
+            _footStepParticles.Spawn();
+        }
+
+        public void AddToBalance(int balance)
+        {
+            _coins += balance;
+            ShowBalance();
+        }
+
+        private void ShowBalance()
+        {
+            Debug.Log($"Player has {_coins} currency.");
+        }
+
+        public void ResetBalance()
+        {
+            _coins = 0;
         }
     }
 }

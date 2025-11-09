@@ -101,7 +101,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1910131539}
-        m_MethodName: DealDamage
+        m_MethodName: Apply
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -123,10 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53cdc182d1bb764ab1c8bdfe71a3351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
-  _animationKey: 
-  _damageAmount: 1
-  _healAmount: 0
+  _healthModifier: -1
 --- !u!61 &3274068652036471609
 BoxCollider2D:
   m_ObjectHideFlags: 0

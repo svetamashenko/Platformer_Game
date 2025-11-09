@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7949384925346040712}
   - component: {fileID: 7603909664247768955}
-  - component: {fileID: 1837269867}
   - component: {fileID: 4456095005177425366}
   - component: {fileID: 3032380869315476043}
-  - component: {fileID: 8908113038473665598}
+  - component: {fileID: 4026574817174525592}
+  - component: {fileID: 1368066327}
+  - component: {fileID: 9016377323334301976}
   m_Layer: 0
   m_Name: HealthPotion
   m_TagString: Untagged
@@ -86,25 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1837269867
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5683190274951948940}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 82b3b7c9defaf6b47921500d9a5ec1c5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!70 &4456095005177425366
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -115,7 +97,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.016628817, y: -0.041571975}
@@ -133,11 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53cdc182d1bb764ab1c8bdfe71a3351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 1837269867}
-  _animationKey: is_used
-  _damageAmount: 0
-  _healAmount: 5
---- !u!114 &8908113038473665598
+  _healthModifier: 5
+--- !u!114 &4026574817174525592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +125,69 @@ MonoBehaviour:
   m_GameObject: {fileID: 5683190274951948940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c39ccb4df2fac4b8533354c92aeb7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fa4271acc0fd5846850a1748a3ed786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _states:
+  - Name: rounding
+    Loop: 1
+    Sprites:
+    - {fileID: 2011574832808370117, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: -8438763151253471919, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: -7587008787810219046, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: 950379908824699032, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: -512142692958456438, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: 8745225756722806956, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: -7481350877133238684, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    AllowNext: 1
+    NextStateName: is_used
+  - Name: is_used
+    Loop: 0
+    Sprites:
+    - {fileID: 6040734443530017722, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: 8167133005111728920, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: 2014349484240403859, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: 6326803469982491369, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    AllowNext: 0
+    NextStateName: 
+  _frameRate: 10
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1368066327}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1368066327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683190274951948940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508c74d6ffd74834785cf60cf169893e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 5683190274951948940}
+--- !u!114 &9016377323334301976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683190274951948940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4793f58a683a442af03923c21e81f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
@@ -154,8 +195,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3032380869315476043}
-        m_MethodName: RestoreHealth
+        m_MethodName: Apply
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4026574817174525592}
+        m_MethodName: SetClip
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

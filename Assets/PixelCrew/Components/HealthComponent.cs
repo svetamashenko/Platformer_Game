@@ -1,31 +1,55 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthComponent : MonoBehaviour
+namespace PixelCrew.Components
 {
-    [SerializeField] private int _health;
-    [SerializeField] private UnityEvent _onDamage;
-    [SerializeField] private UnityEvent _onDie;
-    [SerializeField] private UnityEvent _onHeal;
-    [SerializeField] private int _maxHealth = 9;
-
-    public void ApplyDamage(int damageValue)
+    public class HealthComponent : MonoBehaviour
     {
-        _health -= damageValue;
-        _onDamage?.Invoke();
-        if (_health <= 0)
+        [SerializeField] private int _health;
+        [SerializeField] private UnityEvent _onDamage;
+        [SerializeField] private UnityEvent _onDie;
+        [SerializeField] private UnityEvent _onHeal;
+        [SerializeField] private int _maxHealth = 9;
+
+        private bool _isInvincible;
+        private int _pendingDamage;
+
+        public void ModifyHealth(int healthValue)
         {
-            _onDie?.Invoke();
+            if (healthValue < 0 && _isInvincible)
+            {
+                _pendingDamage += healthValue;
+                return;
+            }
+
+            ApplyDamage(healthValue);
         }
-    }
 
-    public void ApplyHeal(int healValue)
-    {
-        _health += healValue;
-        _onHeal?.Invoke();
-        if (_health >= _maxHealth)
+        private void ApplyDamage(int damage)
         {
-            _health = _maxHealth;
+            _health += damage;
+
+            if (damage < 0)
+                _onDamage?.Invoke();
+            else
+                _onHeal?.Invoke();
+
+            if (_health <= 0)
+                _onDie?.Invoke();
+
+            if (_health >= _maxHealth)
+                _health = _maxHealth;
+        }
+
+        public void OnHitAnimationEnd()
+        {
+            _isInvincible = false;
+
+            if (_pendingDamage != 0)
+            {
+                ApplyDamage(_pendingDamage);
+                _pendingDamage = 0;
+            }
         }
     }
 }

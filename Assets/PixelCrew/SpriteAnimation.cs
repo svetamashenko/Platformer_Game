@@ -8,7 +8,6 @@ namespace PixelCrew
     public class SpriteAnimation : MonoBehaviour
     {
         [SerializeField] private List<AnimationState> _states = new List<AnimationState>();
-
         [SerializeField] private int _frameRate = 10;
         [SerializeField] private UnityEvent _onComplete;
 
@@ -18,7 +17,6 @@ namespace PixelCrew
         private int _currentSpriteIndex;
         private float _nextFrameTime;
         private bool _isPlaying = true;
-
 
         private void OnBecomeVisible()
         {
@@ -85,7 +83,7 @@ namespace PixelCrew
                 _isPlaying = true;
             }
 
-            enabled = _isPlaying = false;
+            enabled = _isPlaying = true;
         }
 
         private AnimationState FindStateByName(string name)
