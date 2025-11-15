@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Components;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace PixelCrew
@@ -6,6 +7,7 @@ namespace PixelCrew
     public class HeroInputReader : MonoBehaviour
     {
         [SerializeField] private Hero _hero;
+        [SerializeField] private PlatformGeneratorComponent _platformGenerator;
 
         private void OnMovement(InputValue context)
         {
@@ -21,6 +23,11 @@ namespace PixelCrew
         private void OnInteract()
         {
             _hero.Interact();
+        }
+
+        private void OnGeneratePlatform()
+        {
+            _platformGenerator.GeneratePlatform(_hero.transform);
         }
     }
 }

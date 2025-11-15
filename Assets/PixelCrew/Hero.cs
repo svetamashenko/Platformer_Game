@@ -62,16 +62,15 @@ namespace PixelCrew
             UpdateSpriteDirection();
 
             _isGrounded = IsGrounded();
+        }
 
+        private void Update()
+        {
             if (_isGrounded && !_hasSpawnedFallParticles && _fallSpeed > _minFallSpeed)
             {
                 _fallParticles.Spawn();
                 _hasSpawnedFallParticles = true;
             }
-        }
-
-        private void Update()
-        {
         }
 
         private float CalculateVelocity()

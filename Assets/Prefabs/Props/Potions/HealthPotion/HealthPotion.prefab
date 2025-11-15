@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa4271acc0fd5846850a1748a3ed786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AddAppearing: 0
+  AddDisappearing: 0
   _states:
   - Name: rounding
     Loop: 1
@@ -165,6 +167,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _fadeDuration: 0.5
 --- !u!114 &1368066327
 MonoBehaviour:
   m_ObjectHideFlags: 0
