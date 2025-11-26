@@ -29,14 +29,16 @@ namespace PixelCrew.Components
         {
             _health += damage;
 
-            if (damage < 0)
+            if (damage < 0 && _health > 0)
                 _onDamage?.Invoke();
             else
                 _onHeal?.Invoke();
 
             if (_health <= 0)
+            {
                 _onDie?.Invoke();
-
+                return;
+            }
             if (_health >= _maxHealth)
                 _health = _maxHealth;
         }

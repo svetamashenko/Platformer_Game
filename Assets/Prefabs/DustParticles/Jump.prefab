@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa4271acc0fd5846850a1748a3ed786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AddAppearing: 0
+  AddDisappearing: 0
   _states:
   - Name: jump
     Loop: 0
@@ -107,21 +109,22 @@ MonoBehaviour:
     - {fileID: 21300000, guid: ea7344477589a284c951b31f888e4e6b, type: 3}
     AllowNext: 0
     NextStateName: 
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -9071295581568387452}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _frameRate: 10
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -9071295581568387452}
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _fadeDuration: 0.5
 --- !u!114 &-9071295581568387452
 MonoBehaviour:
   m_ObjectHideFlags: 0

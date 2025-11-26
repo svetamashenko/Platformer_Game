@@ -165,6 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa4271acc0fd5846850a1748a3ed786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AddAppearing: 0
+  AddDisappearing: 0
   _states:
   - Name: CoinSilver
     Loop: 1
@@ -175,7 +177,8 @@ MonoBehaviour:
     - {fileID: 2722280177590742205, guid: 3bc0044924338644a97827f106515d07, type: 3}
     AllowNext: 0
     NextStateName: 
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
   _frameRate: 10
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  _fadeDuration: 0.5

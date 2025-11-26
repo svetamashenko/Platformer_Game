@@ -12,7 +12,6 @@ namespace PixelCrew
         [SerializeField] public bool AddDisappearing;
         [SerializeField] private List<AnimationState> _states = new List<AnimationState>();
         [SerializeField] private int _frameRate = 10;
-        [SerializeField] private UnityEvent _onComplete;
         [SerializeField] private float _fadeDuration = 0.5f;
 
         private SpriteRenderer _renderer;
@@ -78,17 +77,17 @@ namespace PixelCrew
                 }
                 else
                 {
-                    _isPlaying = false;
+                    enabled = _isPlaying = false;
+                    _currentState.OnComplete?.Invoke();
                     if (_currentState.AllowNext)
                     {
                         _currentState = FindStateByName(_currentState.NextStateName);
                         if (!string.IsNullOrEmpty(_currentState.Name))
                         {
                             _currentSpriteIndex = 0;
-                            _isPlaying = true;
+                            enabled = _isPlaying = true;
                         }
                     }
-                    _onComplete?.Invoke();
                     return;
                 }
             }
@@ -106,7 +105,6 @@ namespace PixelCrew
                 _currentSpriteIndex = 0;
                 _secondsPerFrame = 1f / _frameRate;
                 _nextFrameTime = Time.time + _secondsPerFrame;
-                _isPlaying = true;
             }
             enabled = _isPlaying = true;
         }

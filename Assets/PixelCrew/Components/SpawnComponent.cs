@@ -9,10 +9,11 @@ namespace PixelCrew.Components
         [SerializeField] private GameObject _prefab;
 
         [ContextMenu("Spawn")]
-        public void Spawn()
+        public GameObject Spawn()
         {
             var instantiate = Instantiate(_prefab, _target.position, Quaternion.identity);
             instantiate.transform.localScale = _target.lossyScale;
+            return instantiate;
         }
     }
 }

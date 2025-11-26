@@ -9,25 +9,42 @@ namespace PixelCrew
         [SerializeField] private Hero _hero;
         [SerializeField] private PlatformGeneratorComponent _platformGenerator;
 
-        private void OnMovement(InputValue context)
+        public void OnMovement(InputAction.CallbackContext context)
         {
-            var direction = context.Get<Vector2>();
+            var direction = context.ReadValue<Vector2>();
             _hero.SetDirection(direction);
         }
 
-        private void OnSaySomething()
+        public void OnSaySomething(InputAction.CallbackContext context)
         {
-            Hero.SaySomething();
+            if (context.canceled)
+            {
+                Hero.SaySomething();
+            }
         }
 
-        private void OnInteract()
+        public void OnInteract(InputAction.CallbackContext context)
         {
-            _hero.Interact();
+            if (context.canceled)
+            {
+                _hero.Interact();
+            }
         }
 
-        private void OnGeneratePlatform()
+        public void OnGeneratePlatform(InputAction.CallbackContext context)
         {
-            _platformGenerator.GeneratePlatform(_hero.transform);
+            if (context.canceled)
+            {
+                _platformGenerator.GeneratePlatform(_hero.transform);
+            }
+        }
+
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            if (context.canceled)
+            {
+                _hero.Attack();
+            }
         }
     }
 }
