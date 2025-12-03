@@ -153,7 +153,7 @@ MonoBehaviour:
     - {fileID: 6937817954938267909, guid: 438cc95dc96c41a4798836a1906cb62a, type: 3}
     - {fileID: -6470460504253458178, guid: c52400a070668d546b8170cd2a67cf7c, type: 3}
     - {fileID: -4178046375966092550, guid: d488a89ca518e654eab26490ef132b3d, type: 3}
-    AllowNext: 1
+    AllowNext: 0
     NextStateName: idle
     OnComplete:
       m_PersistentCalls:
@@ -170,8 +170,8 @@ MonoBehaviour:
     OnComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1478736037655636241}
-          m_MethodName: Spawn
+        - m_Target: {fileID: 2669161336006790814}
+          m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -181,12 +181,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 2669161336006790814}
-          m_MethodName: DestroyObject
+        - m_Target: {fileID: 558995859}
+          m_MethodName: SpawnCoins
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2669161336006790809}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -248,18 +259,10 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 558995859}
-        m_MethodName: SpawnCoins
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  _onChange:
     m_PersistentCalls:
       m_Calls: []
   _maxHealth: 9
@@ -271,7 +274,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2669161336006790809}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -369,4 +372,5 @@ MonoBehaviour:
   _silverProbability: 0.8
   _goldSpawn: {fileID: 558995858}
   _silverSpawn: {fileID: 558995857}
+  _destroiedParts: {fileID: 1478736037655636241}
   _hero: {fileID: 0}

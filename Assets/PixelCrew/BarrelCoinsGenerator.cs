@@ -10,6 +10,7 @@ namespace PixelCrew
         [SerializeField] private float _silverProbability;
         [SerializeField] private SpawnComponent _goldSpawn;
         [SerializeField] private SpawnComponent _silverSpawn;
+        [SerializeField] private SpawnComponent _destroiedParts;
         [SerializeField] private Hero _hero;
 
         public void SpawnCoins()
@@ -28,6 +29,8 @@ namespace PixelCrew
                 GameObject coin = _silverSpawn.Spawn();
                 SetupEnterTrigger(coin, 1);
             }
+
+            _destroiedParts.Spawn();
         }
 
         private void SetupEnterTrigger(GameObject coin, int value)

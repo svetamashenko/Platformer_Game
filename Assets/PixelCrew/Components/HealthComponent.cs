@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace PixelCrew.Components
@@ -9,6 +10,8 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
+        [SerializeField] private HealthChangeEvent _onChange;
+
         [SerializeField] private int _maxHealth = 9;
 
         private bool _isInvincible;
@@ -16,6 +19,9 @@ namespace PixelCrew.Components
 
         public void ModifyHealth(int healthValue)
         {
+            if (_health <= 0)
+                return;
+
             if (healthValue < 0 && _isInvincible)
             {
                 _pendingDamage += healthValue;
@@ -29,18 +35,23 @@ namespace PixelCrew.Components
         {
             _health += damage;
 
-            if (damage < 0 && _health > 0)
-                _onDamage?.Invoke();
-            else
-                _onHeal?.Invoke();
-
             if (_health <= 0)
             {
                 _onDie?.Invoke();
                 return;
             }
-            if (_health >= _maxHealth)
-                _health = _maxHealth;
+            else
+            {
+                _onChange?.Invoke(_health);
+
+                if (damage < 0 && _health > 0)
+                    _onDamage?.Invoke();
+                else
+                    _onHeal?.Invoke();
+
+                if (_health >= _maxHealth)
+                    _health = _maxHealth;
+            }
         }
 
         public void OnHitAnimationEnd()
@@ -52,6 +63,14 @@ namespace PixelCrew.Components
                 ApplyDamage(_pendingDamage);
                 _pendingDamage = 0;
             }
+        }
+
+        [Serializable]
+        public class HealthChangeEvent : UnityEvent<int> { }
+
+        public void SetHealth(int hp)
+        {
+            _health = hp;
         }
     }
 }

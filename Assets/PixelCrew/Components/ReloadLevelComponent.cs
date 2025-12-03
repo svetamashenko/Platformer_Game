@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.PixelCrew.Model;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Components
@@ -7,8 +8,14 @@ namespace PixelCrew.Components
     {
         public void Reload()
         {
-            var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            var session = FindObjectOfType<GameSession>();
+            if (session != null)
+            {
+                session.ResetToInitialState();
+            }
+
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
         }
     }
 }

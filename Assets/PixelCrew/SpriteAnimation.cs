@@ -9,7 +9,7 @@ namespace PixelCrew
     public class SpriteAnimation : MonoBehaviour
     {
         [SerializeField] private bool AddAppearing;
-        [SerializeField] public bool AddDisappearing;
+        public bool AddDisappearing;
         [SerializeField] private List<AnimationState> _states = new List<AnimationState>();
         [SerializeField] private int _frameRate = 10;
         [SerializeField] private float _fadeDuration = 0.5f;
@@ -21,16 +21,6 @@ namespace PixelCrew
         private float _nextFrameTime;
         private bool _isPlaying = true;
         private Color _startColor;
-
-        private void OnBecomeVisible()
-        {
-            enabled = _isPlaying;
-        }
-
-        private void OnBecomeInvisible()
-        {
-            enabled = false;
-        }
 
         private void Start()
         {

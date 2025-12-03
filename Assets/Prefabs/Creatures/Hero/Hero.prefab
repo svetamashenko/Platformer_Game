@@ -5179,7 +5179,6 @@ MonoBehaviour:
   _footStepParticles: {fileID: 563252495}
   _jumpParticles: {fileID: 698788746}
   _fallParticles: {fileID: 1131221164}
-  _coins: 0
   _hitParticles: {fileID: 1467051689}
   _attackRange: {fileID: 1943809509}
   _fallSpeed: 0
@@ -5390,6 +5389,20 @@ MonoBehaviour:
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
+  _onChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 219267967784211571}
+        m_MethodName: OnHealthChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _maxHealth: 9
 --- !u!114 &4269011270883501845
 MonoBehaviour:
@@ -5416,7 +5429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de90705f6f0367d489cf899495b45432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _platformPrefab: {fileID: 2066182702043665368, guid: 37a9731681aa0274f852b5de95e806f9,
+  _platformPrefab: {fileID: 2066182702043665368, guid: f694439f2fe613c44aa2098bb4a79c15,
     type: 3}
   _gridSize: 1
   _collisionCheckRadius: 0.4

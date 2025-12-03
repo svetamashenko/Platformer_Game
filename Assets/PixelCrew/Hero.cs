@@ -1,4 +1,5 @@
-﻿using PixelCrew.Components;
+﻿using Assets.PixelCrew.Model;
+using PixelCrew.Components;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -22,7 +23,6 @@ namespace PixelCrew
         [SerializeField] private SpawnComponent _jumpParticles;
         [SerializeField] private SpawnComponent _fallParticles;
 
-        [SerializeField] private int _coins = 0;
         [SerializeField] private ParticleSystem _hitParticles;
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
@@ -37,8 +37,6 @@ namespace PixelCrew
         private static readonly int HitKey = Animator.StringToHash("hit");
         private static readonly int AttackKey = Animator.StringToHash("attack");
 
-        private bool _isArmed;
-
 
         private bool _isGrounded;
         private bool _allowDoubleJump;
@@ -47,6 +45,7 @@ namespace PixelCrew
         [SerializeField] private float _minFallSpeed = 1f;
         private bool _hasSpawnedFallParticles;
 
+        private GameSession _session;
 
         public void SetDirection(Vector2 direction)
         {
@@ -57,6 +56,19 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+        }
+
+        private void Start()
+        {
+            _session = FindObjectOfType<GameSession>();
+            var health = GetComponent<HealthComponent>();
+
+            health.SetHealth(_session.Data.Hp);
+            UpdateHeroWeapon();
+        }
+        private void UpdateHeroWeapon()
+        {
+            _animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
         }
 
         private void FixedUpdate()
@@ -158,7 +170,7 @@ namespace PixelCrew
             _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
 
-            if (_coins > 0)
+            if (_session.Data.Coins > 0)
             {
                 SpawnCoins();
             }
@@ -166,8 +178,8 @@ namespace PixelCrew
 
         private void SpawnCoins()
         {
-            var numCoinsToDispose = Mathf.Min(_coins, 5);
-            _coins -= numCoinsToDispose;
+            var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
+            _session.Data.Coins -= numCoinsToDispose;
             ShowBalance();
 
             var burst = _hitParticles.emission.GetBurst(0);
@@ -204,27 +216,32 @@ namespace PixelCrew
 
         public void AddToBalance(int balance)
         {
-            _coins += balance;
+            _session.Data.Coins += balance;
             ShowBalance();
         }
 
         private void ShowBalance()
         {
-            Debug.Log($"Player has {_coins} currency.");
+            Debug.Log($"Player has {_session.Data.Coins} currency.");
         }
 
         public void ResetBalance()
         {
-            _coins = 0;
+            _session.Data.Coins = 0;
         }
         public void Attack()
         {
-            if (!_isArmed)
+            if (!_session.Data.IsArmed)
             {
                 return;
             }
 
             _animator.SetTrigger(AttackKey);
+        }
+
+        public void OnHealthChanged(int currentHealth)
+        {
+            _session.Data.Hp = currentHealth;
         }
 
         public void OnAttackApplying()
@@ -243,7 +260,7 @@ namespace PixelCrew
         }
         public void ArmHero()
         {
-            _isArmed = true;
+            _session.Data.IsArmed = true;
             _animator.runtimeAnimatorController = _armed;
         }
     }
