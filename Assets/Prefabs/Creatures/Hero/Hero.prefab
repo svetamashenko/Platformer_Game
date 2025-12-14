@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 698788745}
   - component: {fileID: 698788746}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: JumpPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 773275752}
   - component: {fileID: 773275751}
   - component: {fileID: 773275750}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1131221163}
   - component: {fileID: 1131221164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FallPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1467051690}
   - component: {fileID: 1467051689}
   - component: {fileID: 1467051688}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4976,7 +4976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1923904333}
   - component: {fileID: 1923904334}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttackPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -4995,7 +4995,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 219267967784211570}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1923904334
 MonoBehaviour:
@@ -5021,7 +5021,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1943809508}
   - component: {fileID: 1943809509}
-  m_Layer: 0
+  - component: {fileID: 2097416680}
+  m_Layer: 11
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5040,7 +5041,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 219267967784211570}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1943809509
 MonoBehaviour:
@@ -5054,7 +5055,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a138de09787a84fa8956d9444f4a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.2
+  _radius: 0.4
+  _mask:
+    serializedVersion: 2
+    m_Bits: 1847
+  _tags:
+  - Enemy
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2097416680}
+        m_MethodName: Apply
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2097416680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943809507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53cdc182d1bb764ab1c8bdfe71a3351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthModifier: -1
 --- !u!1 &219267967784211564
 GameObject:
   m_ObjectHideFlags: 0
@@ -5075,7 +5108,8 @@ GameObject:
   - component: {fileID: 1783320325}
   - component: {fileID: 1021830197}
   - component: {fileID: 108447183}
-  m_Layer: 0
+  - component: {fileID: 848039819}
+  m_Layer: 11
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5098,8 +5132,9 @@ Transform:
   - {fileID: 1467051690}
   - {fileID: 698788745}
   - {fileID: 1131221163}
-  - {fileID: 1943809508}
   - {fileID: 1923904333}
+  - {fileID: 1943809508}
+  - {fileID: 1666330827887648763}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5165,24 +5200,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7797757f7158b149b3675e4d95cf87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _invertScale: 0
   _speed: 3
-  _jumpSpeed: 12
+  JumpSpeed: 12
   _damageJumpSpeed: 30
   _damage: 1
   _groundCheck: {fileID: 773275750}
+  _attackRange: {fileID: 1943809509}
+  Particles: {fileID: 848039819}
+  _minFallSpeed: 11.7
   _interactionRadius: 1
-  _interactionLayer:
+  _layer:
     serializedVersion: 2
     m_Bits: 512
   _armed: {fileID: 9100000, guid: d51a6d7015ccc644e95c455761a8bce6, type: 2}
   _disarmed: {fileID: 9100000, guid: 5dae801e52af0544395a0b0e8daa8c0d, type: 2}
-  _footStepParticles: {fileID: 563252495}
-  _jumpParticles: {fileID: 698788746}
-  _fallParticles: {fileID: 1131221164}
   _hitParticles: {fileID: 1467051689}
-  _attackRange: {fileID: 1943809509}
-  _fallSpeed: 0
-  _minFallSpeed: 11.7
+  _interactionCheck: {fileID: 4010939630052083715}
 --- !u!114 &219267967784211569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5336,7 +5370,7 @@ Animator:
   m_GameObject: {fileID: 219267967784211564}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5dae801e52af0544395a0b0e8daa8c0d, type: 2}
+  m_Controller: {fileID: 9100000, guid: d51a6d7015ccc644e95c455761a8bce6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5432,7 +5466,7 @@ MonoBehaviour:
   _platformPrefab: {fileID: 2066182702043665368, guid: f694439f2fe613c44aa2098bb4a79c15,
     type: 3}
   _gridSize: 1
-  _collisionCheckRadius: 0.4
+  _collisionCheckRadius: 0.6
   _obstacleMask:
     serializedVersion: 2
     m_Bits: 256
@@ -5465,6 +5499,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackParticles: {fileID: 1923904334}
+--- !u!114 &848039819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219267967784211564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733b45395c7372243acd07921280e6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawners:
+  - Id: Run
+    Component: {fileID: 563252495}
+  - Id: Jump
+    Component: {fileID: 698788746}
+  - Id: Fall
+    Component: {fileID: 1131221164}
+  - Id: Attack
+    Component: {fileID: 1923904334}
+--- !u!1 &2933448607753241211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666330827887648763}
+  - component: {fileID: 4010939630052083715}
+  - component: {fileID: 5784310302551759654}
+  m_Layer: 11
+  m_Name: InteractablesRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1666330827887648763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933448607753241211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 219267967784211570}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4010939630052083715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933448607753241211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a138de09787a84fa8956d9444f4a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.2
+  _mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _tags:
+  - Interactables
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5784310302551759654}
+        m_MethodName: DoInteracion
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5784310302551759654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933448607753241211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d7193e5d748ec4da690cf7c5dcebea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6602410688037415381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5475,7 +5606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9195617902252935809}
   - component: {fileID: 563252495}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FootStepPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

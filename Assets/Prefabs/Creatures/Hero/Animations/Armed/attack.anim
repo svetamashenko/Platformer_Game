@@ -73,8 +73,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: SpawnAttackParticles
-    data: 
+    functionName: Spawn
+    data: Attack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -82,7 +82,8 @@ AnimationClip:
   - time: 0.1
     functionName: OnAttackApplying
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 219267967784211564, guid: 3ac4db5c5c169444f979b3d238e8cd52,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

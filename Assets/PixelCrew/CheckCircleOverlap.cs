@@ -1,30 +1,40 @@
 ﻿using Assets.PixelCrew.Utils;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace PixelCrew
 {
     public class CheckCircleOverlap : MonoBehaviour
     {
         [SerializeField] private float _radius = 1f;
-        private readonly Collider2D[] _interactionResults = new Collider2D[5];
-        public GameObject[] GetObjectsInRange()
+        [SerializeField] private LayerMask _mask;
+        [SerializeField] private string[] _tags;
+        [SerializeField] private OnOverlapEvent _onOverlap;
+        private readonly Collider2D[] _interactionResults = new Collider2D[10];
+
+        public void Check()
         {
             var size = Physics2D.OverlapCircleNonAlloc(
-                transform.position,
-                _radius,
-                _interactionResults);
+            transform.position,
+            _radius,
+            _interactionResults,
+            _mask);
 
-            var overlaps = new List<GameObject>();
-            for (int i = 0; i< size; i++)
+            for (int i = 0; i < size; i++)
             {
-                overlaps.Add(_interactionResults[i].gameObject);
+                var overlapResult = _interactionResults[i];
+                var isInTags = _tags.Any(tag => overlapResult.CompareTag(tag));
+                if (isInTags)
+                {
+                    _onOverlap?.Invoke(overlapResult.gameObject);
+                }
             }
-
-            return overlaps.ToArray();
         }
-
 
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
@@ -33,5 +43,10 @@ namespace PixelCrew
             Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
         }
 #endif
+
+        [Serializable]
+        private class OnOverlapEvent : UnityEvent<GameObject>
+        {
+        }
     }
 }
