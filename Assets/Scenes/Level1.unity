@@ -5717,6 +5717,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 980623357, guid: 23c61025b641df54599281374d4ffef3, type: 3}
+      propertyPath: _sceneName
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 8920290176795744210, guid: 23c61025b641df54599281374d4ffef3,
         type: 3}
       propertyPath: m_RootOrder
@@ -8617,6 +8621,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 219267967784211572, guid: 3ac4db5c5c169444f979b3d238e8cd52,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5dae801e52af0544395a0b0e8daa8c0d, type: 2}
     - target: {fileID: 4269011270883501845, guid: 3ac4db5c5c169444f979b3d238e8cd52,
         type: 3}
       propertyPath: _objectToDestroy

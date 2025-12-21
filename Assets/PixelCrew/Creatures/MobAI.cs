@@ -1,5 +1,6 @@
 ﻿using Assets.PixelCrew.Components;
 using PixelCrew;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -48,9 +49,15 @@ namespace Assets.PixelCrew.Creatures
 
         private IEnumerator AgroToHero()
         {
+            LookAtHero();
             _particles.Spawn("Exclamation");
             yield return new WaitForSeconds(_alarmDelay);
             StartState(GoToHero());
+        }
+
+        private void LookAtHero()
+        {
+            _creature.UpdateSpriteDirection(GetDirectionToTarget());
         }
 
         private IEnumerator GoToHero()
@@ -68,8 +75,14 @@ namespace Assets.PixelCrew.Creatures
                 }
                 yield return null;
             }
-            _particles.Spawn("Miss");
+            _creature.SetDirection(Vector2.zero);
+
+            if (!_isDead)
+            {
+                _particles.Spawn("Miss");
+            }
             yield return new WaitForSeconds(_missCooldown);
+
             StartState(_patrol.DoPatrol());
         }
 
@@ -89,9 +102,14 @@ namespace Assets.PixelCrew.Creatures
         {
             if (_isDead) return;
 
+            _creature.SetDirection(GetDirectionToTarget());
+        }
+
+        private Vector2 GetDirectionToTarget()
+        {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
-            _creature.SetDirection(direction.normalized);
+            return direction.normalized;
         }
 
         private void StartState(IEnumerator coroutine)
@@ -124,6 +142,7 @@ namespace Assets.PixelCrew.Creatures
             {
                 _patrol.enabled = false;
             }
+            _creature.SetDirection(Vector2.zero);
 
             _target = null;
         }

@@ -10,6 +10,34 @@ namespace PixelCrew
         [SerializeField] private Hero _hero;
         [SerializeField] private PlatformGeneratorComponent _platformGenerator;
 
+        private float _pressStartTime;
+        private const float _longPressThreshold = 1f;
+
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (context.started || context.performed)
+            {
+                _pressStartTime = Time.unscaledTime;
+            }
+
+            else if (context.canceled)
+            {
+                float pressDuration = Time.unscaledTime - _pressStartTime;
+
+                if (pressDuration >= _longPressThreshold)
+                {
+                    if (_hero != null)
+                    {
+                        _hero.ThrowMultiple(3);
+                    }
+                }
+                else
+                {
+                    _hero.Throw();
+                }
+            }
+        }
+
         public void OnMovement(InputAction.CallbackContext context)
         {
             var direction = context.ReadValue<Vector2>();

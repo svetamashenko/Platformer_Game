@@ -1,6 +1,8 @@
 ﻿using Assets.PixelCrew.Model;
+using Assets.PixelCrew.Utils;
 using PixelCrew;
 using PixelCrew.Components;
+using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -10,13 +12,19 @@ namespace Assets.PixelCrew.Creatures
     {
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _layer;
+
+        [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
-        [SerializeField] private ParticleSystem _hitParticles;
+        [SerializeField] private ParticleSystem _coinsParticles;
         [SerializeField] private CheckCircleOverlap _interactionCheck;
 
         private bool _allowDoubleJump;
         private GameSession _session;
+        private int _swordsNumber;
+        private int _maxSwordsNumber = 5;
+
+        private const float AnimationDuration = 0.16f;
 
         private void Start()
         {
@@ -25,6 +33,7 @@ namespace Assets.PixelCrew.Creatures
 
             health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
+            _swordsNumber = _session.Data.IsArmed ? 1 : 0;
         }
         private void UpdateHeroWeapon()
         {
@@ -58,7 +67,6 @@ namespace Assets.PixelCrew.Creatures
             return yVelocity;
         }
 
-
         public static void SaySomething()
         {
             Debug.Log("Something...");
@@ -79,12 +87,12 @@ namespace Assets.PixelCrew.Creatures
             _session.Data.Coins -= numCoinsToDispose;
             ShowBalance();
 
-            var burst = _hitParticles.emission.GetBurst(0);
+            var burst = _coinsParticles.emission.GetBurst(0);
             burst.count = numCoinsToDispose;
-            _hitParticles.emission.SetBurst(0, burst);
+            _coinsParticles.emission.SetBurst(0, burst);
 
-            _hitParticles.gameObject.SetActive(true);
-            _hitParticles.Play();
+            _coinsParticles.gameObject.SetActive(true);
+            _coinsParticles.Play();
         }
 
         public void Interact()
@@ -127,6 +135,64 @@ namespace Assets.PixelCrew.Creatures
         {
             _session.Data.IsArmed = true;
             Animator.runtimeAnimatorController = _armed;
+            if (_swordsNumber == 5)
+            {
+                Debug.Log($"Hero already has max number of swords ({_maxSwordsNumber})!");
+            }
+            else
+            {
+                _swordsNumber += 1;
+                Debug.Log($"Hero has {_swordsNumber} swords.");
+            }
+        }
+
+        public void Throw()
+        {
+
+            if (_swordsNumber == 1)
+            {
+                Debug.Log("Hero can't throw the last one sword!");
+            }
+            else if (_throwCooldown.IsReady)
+            {
+                PerformThrow();
+            }
+        }
+
+        public void PerformThrow()
+        {
+            Animator.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
+            _swordsNumber -= 1;
+            Debug.Log($"Hero has {_swordsNumber} swords.");
+        }
+
+        public void OnThrowApplying()
+        {
+            Particles.Spawn("Throw");
+        }
+
+        public void ThrowMultiple(int numberOfSwords)
+        {
+            if (_swordsNumber <= 1) return;
+
+            int maxPossible = Mathf.Min(numberOfSwords, _swordsNumber - 1);
+
+            if (maxPossible <= 0) return;
+
+            if (_throwCooldown.IsReady)
+            {
+                StartCoroutine(ThrowSequence(maxPossible));
+            }
+        }
+
+        private IEnumerator ThrowSequence(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                PerformThrow();
+                yield return new WaitForSeconds(AnimationDuration);
+            }
         }
     }
 }
