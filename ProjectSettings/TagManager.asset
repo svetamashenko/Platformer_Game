@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Interactables
+  - Walls
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - Interactables
   - Trash
   - Hero
-  - 
-  - 
+  - Enemies
+  - Collectables
   - 
   - 
   - 

@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 0.5}
+  m_Offset: {x: -0.8, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 2}
+  m_Size: {x: 4.5, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &3046161273205217883
 MonoBehaviour:
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 1584620034961898318}
   - component: {fileID: 1584620034775516420}
   - component: {fileID: 478291204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sharky
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ Animator:
   m_GameObject: {fileID: 1654875537483800745}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b289fc59ec683a84f95528ae6aecbe80, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -651,7 +651,7 @@ MonoBehaviour:
   _groundCheck: {fileID: 1584620035018962083}
   _lookaheadDistance: 0.5
   _groundCheckSize: {x: 0.2, y: 0.1}
-  _obstacleCheckDistance: 0.3
+  _obstacleCheckDistance: 0.4
 --- !u!1 &4828331170610217198
 GameObject:
   m_ObjectHideFlags: 0
