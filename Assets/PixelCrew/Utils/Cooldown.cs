@@ -16,5 +16,11 @@ namespace Assets.PixelCrew.Utils
         }
 
         public bool IsReady => _timesUp <= Time.time;
+
+        public void ResetWithDelayPercent(int percent)
+        {
+            float delay = _value * (percent / 100f);
+            _timesUp = Time.time + delay;
+        }
     }
 }

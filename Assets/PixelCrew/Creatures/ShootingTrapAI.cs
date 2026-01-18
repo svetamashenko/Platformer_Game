@@ -22,21 +22,34 @@ namespace Assets.PixelCrew.Creatures
         [SerializeField] private Cooldown _rangeCooldown;
         [SerializeField] private SpawnComponent _rangeAttack;
 
+        [Header("Delay")]
+        [Range(0, 100)]
+        [SerializeField]
+        private int _initialDelayPercent = 0;
+
         private static readonly int MeleeAttackKey = Animator.StringToHash("melee");
         private static readonly int RangeAttackKey = Animator.StringToHash("range");
 
         private Animator _animator;
-
+        private bool _hasFiredOnce;
 
         private void Start()
         {
             _animator = GetComponent<Animator>();
+            _hasFiredOnce = false;
         }
 
         private void Update()
         {
             if (_vision.IsTouchingLayer)
             {
+                // Сброс флага при входе в зону видимости
+                if (!_hasFiredOnce)
+                {
+                    _rangeCooldown.ResetWithDelayPercent(_initialDelayPercent);
+                    _hasFiredOnce = true;
+                }
+
                 if (_hasMeleeAttack)
                 {
                     if (_meleeCanAttack.IsTouchingLayer)
@@ -58,6 +71,11 @@ namespace Assets.PixelCrew.Creatures
                         _rangeCooldown.Reset();
                     }
                 }
+            }
+            else
+            {
+                // Сброс флага, когда игрок выходит из зоны
+                _hasFiredOnce = false;
             }
         }
 
