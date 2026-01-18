@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2305043955240431433}
   - component: {fileID: 2305043955240431436}
   - component: {fileID: 2305043955240431437}
-  - component: {fileID: 2305043955240431434}
   - component: {fileID: 2305043955240431439}
+  - component: {fileID: 5098736351569012631}
   m_Layer: 0
   m_Name: Sword Idle
   m_TagString: Untagged
@@ -154,7 +154,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2305043955240431434}
+      - m_Target: {fileID: 5098736351569012631}
         m_MethodName: ArmHero
         m_Mode: 0
         m_Arguments:
@@ -176,18 +176,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2305043955240431434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2305043955240431446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495f4923d6550b148940db81d462d8d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2305043955240431439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +189,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 2305043955240431446}
+--- !u!114 &5098736351569012631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305043955240431446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c04a81811a7cc4493999dcacf2769a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

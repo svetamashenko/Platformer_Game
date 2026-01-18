@@ -308,10 +308,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vision: {fileID: 2462602848503672883}
+  _hasMeleeAttack: 1
   _meleeCooldown:
     _value: 1
   _meleeAttack: {fileID: 2462602849198969931}
   _meleeCanAttack: {fileID: 2462602849198969926}
+  _hasRangeAttack: 1
   _rangeCooldown:
     _value: 1
   _rangeAttack: {fileID: 2462602847697975852}

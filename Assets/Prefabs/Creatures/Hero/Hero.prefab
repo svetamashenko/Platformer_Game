@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
   IsTouchingLayer: 0
 --- !u!1 &1131221162
 GameObject:

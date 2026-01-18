@@ -12,11 +12,13 @@ namespace Assets.PixelCrew.Creatures
         [SerializeField] private LayerCheck _vision;
 
         [Header("Melee")]
+        [SerializeField] private bool _hasMeleeAttack = true;
         [SerializeField] private Cooldown _meleeCooldown;
         [SerializeField] private CheckCircleOverlap _meleeAttack;
         [SerializeField] private LayerCheck _meleeCanAttack;
 
         [Header("Range")]
+        [SerializeField] private bool _hasRangeAttack = true;
         [SerializeField] private Cooldown _rangeCooldown;
         [SerializeField] private SpawnComponent _rangeAttack;
 
@@ -35,42 +37,60 @@ namespace Assets.PixelCrew.Creatures
         {
             if (_vision.IsTouchingLayer)
             {
-                if (_meleeCanAttack.IsTouchingLayer)
+                if (_hasMeleeAttack)
                 {
-                    if (_meleeCooldown.IsReady)
+                    if (_meleeCanAttack.IsTouchingLayer)
                     {
-                        MeleeAttack();
-                        _meleeCooldown.Reset();
-                        return;
+                        if (_meleeCooldown.IsReady)
+                        {
+                            MeleeAttack();
+                            _meleeCooldown.Reset();
+                            return;
+                        }
                     }
                 }
 
-                if (_rangeCooldown.IsReady)
+                if (_hasRangeAttack)
                 {
-                    RangeAttack();
-                    _rangeCooldown.Reset();
+                    if (_rangeCooldown.IsReady)
+                    {
+                        RangeAttack();
+                        _rangeCooldown.Reset();
+                    }
                 }
             }
         }
 
         private void RangeAttack()
         {
-            _animator.SetTrigger(RangeAttackKey);
+            if (_hasRangeAttack)
+            {
+                _animator.SetTrigger(RangeAttackKey);
+            }
         }
 
         private void MeleeAttack()
         {
-            _animator.SetTrigger(MeleeAttackKey);
+            if (_hasMeleeAttack)
+            {
+                _animator.SetTrigger(MeleeAttackKey);
+            }
         }
 
         private void OnRangeAttack()
         {
-            _rangeAttack.Spawn();
+            if (_hasRangeAttack)
+            {
+                _rangeAttack.Spawn();
+            }
         }
 
         private void OnMeleeAttack()
         {
-            _meleeAttack.Check();
+            if (_hasMeleeAttack)
+            {
+                _meleeAttack.Check();
+            }
         }
     }
 }

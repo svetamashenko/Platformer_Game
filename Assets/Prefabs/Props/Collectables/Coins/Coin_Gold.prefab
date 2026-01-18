@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8246238571443641360}
   - component: {fileID: 7882505375604682372}
   - component: {fileID: 7882505375604682373}
-  - component: {fileID: 2891979896460293748}
   - component: {fileID: -4044327452159332967}
+  - component: {fileID: 3571684913713526649}
   m_Layer: 13
   m_Name: Coin_Gold
   m_TagString: Untagged
@@ -187,21 +187,6 @@ MonoBehaviour:
         m_Calls: []
   _frameRate: 10
   _fadeDuration: 0.5
---- !u!114 &2891979896460293748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7882505375604682368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8360fc767289dcb4ca269d5279416c66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _frequency: 6
-  _amplitude: 0.1
-  _randomize: 1
 --- !u!50 &-4044327452159332967
 Rigidbody2D:
   serializedVersion: 4
@@ -223,3 +208,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3571684913713526649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7882505375604682368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c23d6a1e597e449a8bfb2c5f5a8e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.3
+  _speed: 3
+  _randomizeStartAngle: 1
