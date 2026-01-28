@@ -323,7 +323,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1887876902}
+      objectReference: {fileID: 1196549060}
+    - target: {fileID: 7050679398463810466, guid: 4a9604c4e97717c4e8a14257c9ee3549,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroyObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a9604c4e97717c4e8a14257c9ee3549, type: 3}
 --- !u!1001 &300546105
@@ -5512,7 +5517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34230328, y: -0.9977393, z: -10}
+  m_LocalPosition: {x: 2.407158, y: -0.9965234, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5633,11 +5638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1887876902}
+      objectReference: {fileID: 1418567103}
     - target: {fileID: 7050679398463810466, guid: 4a9604c4e97717c4e8a14257c9ee3549,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AddToBalance
+      value: DestroyObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a9604c4e97717c4e8a14257c9ee3549, type: 3}
@@ -7297,6 +7302,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7882505376703409010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1196549060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 453022439274673510, guid: 4a9604c4e97717c4e8a14257c9ee3549,
+    type: 3}
+  m_PrefabInstance: {fileID: 181160744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508c74d6ffd74834785cf60cf169893e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1236115770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7524,11 +7541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1887876902}
+      objectReference: {fileID: 2147229982}
     - target: {fileID: 7050679398463810466, guid: 4a9604c4e97717c4e8a14257c9ee3549,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AddToBalance
+      value: DestroyObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a9604c4e97717c4e8a14257c9ee3549, type: 3}
@@ -7674,16 +7691,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7882505375604682372, guid: d91999fa4b21fae4cb1ed02eb94b99fa,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1887876902}
-    - target: {fileID: 7882505375604682372, guid: d91999fa4b21fae4cb1ed02eb94b99fa,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AddToBalance
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d91999fa4b21fae4cb1ed02eb94b99fa, type: 3}
 --- !u!4 &1373975693 stripped
@@ -7722,9 +7729,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    Coins: 0
+    _inventory:
+      _inventory: []
     Hp: 5
-    IsArmed: 0
 --- !u!4 &1402717505
 Transform:
   m_ObjectHideFlags: 0
@@ -7739,6 +7746,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1418567103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 453022439274673510, guid: 4a9604c4e97717c4e8a14257c9ee3549,
+    type: 3}
+  m_PrefabInstance: {fileID: 604332744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508c74d6ffd74834785cf60cf169893e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1442584577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7050679398463810465, guid: 4a9604c4e97717c4e8a14257c9ee3549,
@@ -7899,11 +7918,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7882505375604682372, guid: d91999fa4b21fae4cb1ed02eb94b99fa,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1887876902}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d91999fa4b21fae4cb1ed02eb94b99fa, type: 3}
 --- !u!4 &1516571340 stripped
@@ -8271,16 +8285,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7050679398463810466, guid: 4a9604c4e97717c4e8a14257c9ee3549,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1887876902}
-    - target: {fileID: 7050679398463810466, guid: 4a9604c4e97717c4e8a14257c9ee3549,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AddToBalance
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a9604c4e97717c4e8a14257c9ee3549, type: 3}
 --- !u!1 &1694172557
@@ -8446,6 +8450,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -8470,6 +8477,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 431c7679a1f0c0a4483b687eb5e95cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2147229982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 453022439274673510, guid: 4a9604c4e97717c4e8a14257c9ee3549,
+    type: 3}
+  m_PrefabInstance: {fileID: 1288958068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508c74d6ffd74834785cf60cf169893e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &171159149057723829
@@ -9271,16 +9290,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7050679398463810466, guid: 4a9604c4e97717c4e8a14257c9ee3549,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1887876902}
-    - target: {fileID: 7050679398463810466, guid: 4a9604c4e97717c4e8a14257c9ee3549,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AddToBalance
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a9604c4e97717c4e8a14257c9ee3549, type: 3}
 --- !u!1001 &7842484838120498664
@@ -9423,16 +9432,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7882505375604682372, guid: d91999fa4b21fae4cb1ed02eb94b99fa,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1887876902}
-    - target: {fileID: 7882505375604682372, guid: d91999fa4b21fae4cb1ed02eb94b99fa,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AddToBalance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d91999fa4b21fae4cb1ed02eb94b99fa, type: 3}

@@ -1,5 +1,5 @@
-﻿using Assets.PixelCrew.Components;
-using PixelCrew;
+﻿using Assets.PixelCrew.Components.GoBased;
+using PixelCrew.Components.ColliderBased;
 using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures

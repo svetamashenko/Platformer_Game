@@ -2,8 +2,9 @@
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
+using PixelCrew.Model.Data;
 
-namespace Assets.PixelCrew.Model
+namespace PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
     {
@@ -44,8 +45,7 @@ namespace Assets.PixelCrew.Model
 
             if (!_storage.ContainsKey(_currentScene))
             {
-                _storage[_currentScene] = new PlayerData();
-                _storage[_currentScene].CopyFrom(_data);
+                _storage[_currentScene] = _data.Clone();
             }
         }
 
@@ -56,5 +56,6 @@ namespace Assets.PixelCrew.Model
                 _data.CopyFrom(initial);
             }
         }
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Assets.PixelCrew.Utils
+namespace PixelCrew.Utils
 {
     public class HandlesUtils
     {

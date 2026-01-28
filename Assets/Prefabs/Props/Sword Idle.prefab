@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2305043955240431436}
   - component: {fileID: 2305043955240431437}
   - component: {fileID: 2305043955240431439}
-  - component: {fileID: 5098736351569012631}
+  - component: {fileID: 7230869404476695464}
   m_Layer: 0
   m_Name: Sword Idle
   m_TagString: Untagged
@@ -154,8 +154,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5098736351569012631}
-        m_MethodName: ArmHero
+      - m_Target: {fileID: 7230869404476695464}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 2305043955240431446}
---- !u!114 &5098736351569012631
+--- !u!114 &7230869404476695464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,6 +198,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2305043955240431446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21c04a81811a7cc4493999dcacf2769a, type: 3}
+  m_Script: {fileID: 11500000, guid: 105a494e484dcef419a74459c600ee1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: Sword
+  _count: 1

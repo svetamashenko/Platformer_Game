@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.PixelCrew.Utils
+namespace PixelCrew.Utils
 {
     [Serializable]
     public class Cooldown

@@ -301,13 +301,14 @@ MonoBehaviour:
   _vision: {fileID: 7997057401748579152}
   _hasMeleeAttack: 0
   _meleeCooldown:
-    _value: 1
+    _value: 5
   _meleeAttack: {fileID: 0}
   _meleeCanAttack: {fileID: 0}
   _hasRangeAttack: 1
   _rangeCooldown:
-    _value: 1
+    _value: 5
   _rangeAttack: {fileID: 7997057402291080940}
+  _initialDelayPercent: 0
 --- !u!114 &7997057402993602762
 MonoBehaviour:
   m_ObjectHideFlags: 0
