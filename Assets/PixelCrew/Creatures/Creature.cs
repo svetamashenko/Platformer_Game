@@ -22,6 +22,7 @@ namespace Assets.PixelCrew.Creatures
         private float _fallSpeed;
         protected Rigidbody2D Rigidbody;
         protected Vector2 Direction;
+        protected PlaySoundsComponent Sounds;
         protected bool IsGrounded;
 
         protected Animator Animator;
@@ -36,6 +37,7 @@ namespace Assets.PixelCrew.Creatures
         {
             Rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
+            Sounds = GetComponent<PlaySoundsComponent>();
         }
 
         public void SetDirection(Vector2 direction)
@@ -105,10 +107,16 @@ namespace Assets.PixelCrew.Creatures
             if (IsGrounded)
             {
                 yVelocity = JumpSpeed;
-                Particles.Spawn("Jump");
+                DoJumpVfx();
             }
 
             return yVelocity;
+        }
+
+        protected void DoJumpVfx()
+        {
+            Particles.Spawn("Jump");
+            Sounds.Play("Jump");
         }
 
         public void UpdateSpriteDirection(Vector2 direction)
@@ -133,6 +141,7 @@ namespace Assets.PixelCrew.Creatures
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
+            Sounds.Play("Melee");
         }
 
         public void OnAttackApplying()

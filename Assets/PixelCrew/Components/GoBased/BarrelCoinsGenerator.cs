@@ -1,4 +1,5 @@
-﻿using PixelCrew.Components.ColliderBased;
+﻿using PixelCrew.Components.Animations;
+using PixelCrew.Components.ColliderBased;
 using PixelCrew.Creatures.Hero;
 using UnityEngine;
 
@@ -48,7 +49,10 @@ namespace PixelCrew.Components.GoBased
             trigger._action.AddListener((GameObject collider) =>
             {
                 _hero.AddToInventory("Coin", value);
-                Destroy(coin);
+                AudioSource _source = coin.GetComponent<AudioSource>();
+                _source.Play();
+                SpriteAnimation animation = coin.GetComponent<SpriteAnimation>();
+                animation.SetClip("destroy");
             });
         }
     }

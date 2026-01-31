@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 1104908139}
   - component: {fileID: 1104908140}
   - component: {fileID: 1848084308193268027}
+  - component: {fileID: 2767692023493232858}
   m_Layer: 12
   m_Name: Seashell
   m_TagString: Enemy
@@ -317,6 +318,7 @@ MonoBehaviour:
   _rangeCooldown:
     _value: 1
   _rangeAttack: {fileID: 2462602847697975852}
+  _initialDelayPercent: 0
 --- !u!114 &1104908139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +405,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 2462602848750408703}
   _prefab: {fileID: 2270798010054215624, guid: 68b7c23792aeab14499ecbc8ba9be3ac, type: 3}
+--- !u!114 &2767692023493232858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462602848750408698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dc5be4b9368be4cbe6fd6881876c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  _sounds:
+  - _id: Jump
+    _clip: {fileID: 8300000, guid: 10470be14ebc1a043ae668594a1bfbe3, type: 3}
+  - _id: Melee
+    _clip: {fileID: 8300000, guid: a38ccefa60d4fef45beced0ade6889c9, type: 3}
+  - _id: Range
+    _clip: {fileID: 8300000, guid: 729bbef54d321914cabcfacf5c61e259, type: 3}
+  - _id: Hurt
+    _clip: {fileID: 8300000, guid: b1300b02274764a4f955c452e32ac1e1, type: 3}
 --- !u!1 &2462602849198969920
 GameObject:
   m_ObjectHideFlags: 0

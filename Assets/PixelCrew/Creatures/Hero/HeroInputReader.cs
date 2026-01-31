@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Components.GoBased;
-using PixelCrew.Components.Health;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +12,7 @@ namespace PixelCrew.Creatures.Hero
 
         private float _pressStartTime;
         private const float _longPressThreshold = 1f;
+        protected PlaySoundsComponent Sounds;
 
         public void OnThrow(InputAction.CallbackContext context)
         {
@@ -80,6 +80,8 @@ namespace PixelCrew.Creatures.Hero
         {
             if (context.canceled)
             {
+                Sounds = GetComponent<PlaySoundsComponent>();
+                Sounds.Play("Drink");
                 _hero.ApplyHealing(_healingOfPotion);
             }
         }

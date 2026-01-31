@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:PixelCrew.Model.Definitions:InventoryItemsDef
   _items:
   - _id: Sword
-    IsNonStackable: 1
-    MaxStack: 0
+    IsNonStackable: 0
+    MaxStack: 5
   - _id: Coin
     IsNonStackable: 0
     MaxStack: 0
   - _id: HealthPotion
-    IsNonStackable: 0
-    MaxStack: 1
+    IsNonStackable: 1
+    MaxStack: 0
   - _id: Key
     IsNonStackable: 0
     MaxStack: 0

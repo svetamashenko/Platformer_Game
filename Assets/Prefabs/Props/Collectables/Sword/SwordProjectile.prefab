@@ -251,7 +251,7 @@ MonoBehaviour:
   _tag: Walls
   _layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   _action:
     m_PersistentCalls:
       m_Calls:

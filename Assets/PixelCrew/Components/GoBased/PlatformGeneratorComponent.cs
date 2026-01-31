@@ -41,7 +41,9 @@ namespace PixelCrew.Components.GoBased
                 return;
             }
 
-            Instantiate(_platformPrefab, spawnPosition, Quaternion.identity);
+            var platform = Instantiate(_platformPrefab, spawnPosition, Quaternion.identity);
+            AudioSource Sounds = platform.GetComponent<AudioSource>();
+            Sounds.Play();
             _nextAllowedGenerationTime = Time.time + _cooldown;
         }
     }

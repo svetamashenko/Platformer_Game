@@ -23,7 +23,6 @@ namespace PixelCrew.Creatures.Hero
         private bool _allowDoubleJump;
         private GameSession _session;
         private HealthComponent _health;
-        // private int _maxSwordsNumber = 5;
 
         private const float AnimationDuration = 0.16f;
 
@@ -87,7 +86,7 @@ namespace PixelCrew.Creatures.Hero
             else if (_allowDoubleJump && Direction.y > 0)
             {
                 _allowDoubleJump = false;
-                Particles.Spawn("Jump");
+                DoJumpVfx();
                 return JumpSpeed;
             }
 
@@ -111,7 +110,6 @@ namespace PixelCrew.Creatures.Hero
         private void SpawnCoins()
         {
             var numCoinsToDispose = Mathf.Min(CoinCount, 5);
-            Debug.Log($"Убираем {numCoinsToDispose} монет.");
             _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
             ShowBalance();
 
@@ -176,6 +174,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnThrowApplying()
         {
+            Sounds.Play("Range");
             Particles.Spawn("Throw");
         }
 

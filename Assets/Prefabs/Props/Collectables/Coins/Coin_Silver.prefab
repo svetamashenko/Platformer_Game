@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 7050679398463810466}
   - component: {fileID: 7050679398463810467}
   - component: {fileID: -7286516023838469939}
-  - component: {fileID: -2219436743215339377}
   - component: {fileID: 402920683464181055}
+  - component: {fileID: 8436615819090416742}
   m_Layer: 13
   m_Name: Coin_Silver
   m_TagString: Untagged
@@ -148,15 +148,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 453022439274673510}
-        m_MethodName: DestroyObject
+      - m_Target: {fileID: 8436615819090416742}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7050679398463810467}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7050679398463810467
@@ -181,11 +192,34 @@ MonoBehaviour:
     - {fileID: -4893972260818282012, guid: 3bc0044924338644a97827f106515d07, type: 3}
     - {fileID: -6323751108524238166, guid: 3bc0044924338644a97827f106515d07, type: 3}
     - {fileID: 2722280177590742205, guid: 3bc0044924338644a97827f106515d07, type: 3}
+    AllowNext: 1
+    NextStateName: destroy
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - Name: destroy
+    Loop: 0
+    Sprites:
+    - {fileID: -4986890610287934012, guid: 3bc0044924338644a97827f106515d07, type: 3}
+    - {fileID: 6143208460787649835, guid: 3bc0044924338644a97827f106515d07, type: 3}
+    - {fileID: 7609282858266732271, guid: 3bc0044924338644a97827f106515d07, type: 3}
+    - {fileID: -6288512792030432889, guid: 3bc0044924338644a97827f106515d07, type: 3}
     AllowNext: 0
     NextStateName: 
     OnComplete:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 453022439274673510}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _frameRate: 10
   _fadeDuration: 0.5
 --- !u!50 &-7286516023838469939
@@ -209,21 +243,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-2219436743215339377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050679398463808606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3c23d6a1e597e449a8bfb2c5f5a8e68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 0.3
-  _speed: 3
-  _randomizeStartAngle: 1
 --- !u!114 &402920683464181055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +257,99 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: Coin
   _count: 1
+--- !u!82 &8436615819090416742
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050679398463808606}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c550338ba54391146949fd5ae1a90d83, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
