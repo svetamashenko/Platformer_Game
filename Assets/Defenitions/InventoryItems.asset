@@ -9,19 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c7f479bab06fd7d49b47933513386620, type: 3}
   m_Name: InventoryItems
-  m_EditorClassIdentifier: Assembly-CSharp:PixelCrew.Model.Definitions:InventoryItemsDef
+  m_EditorClassIdentifier: 
   _items:
-  - _id: Sword
-    IsNonStackable: 0
-    MaxStack: 5
   - _id: Coin
     IsNonStackable: 0
     MaxStack: 0
-  - _id: HealthPotion
-    IsNonStackable: 1
+  - _id: Sword
+    IsNonStackable: 0
     MaxStack: 0
   - _id: Key
+    IsNonStackable: 0
+    MaxStack: 0
+  - _id: HealthPotion
     IsNonStackable: 0
     MaxStack: 0

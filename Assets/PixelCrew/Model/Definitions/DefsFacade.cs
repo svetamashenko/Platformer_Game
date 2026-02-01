@@ -14,6 +14,7 @@ namespace PixelCrew.Model.Definitions
 
         private static DefsFacade LoadDefs()
         {
+            Resources.Load<InventoryItemsDef>("InventoryItems");
             return _instance = Resources.Load<DefsFacade>("DefsFacade");
         }
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Definitions
 {
-    [CreateAssetMenu(menuName = "Defs/InventoryItems", fileName = "InventoryItems")]
+    [CreateAssetMenu(menuName = "Defs/InventoryItems", fileName = "InventoryItems.asset")]
     public class InventoryItemsDef : ScriptableObject
     {
         [SerializeField] private ItemDef[] _items;
