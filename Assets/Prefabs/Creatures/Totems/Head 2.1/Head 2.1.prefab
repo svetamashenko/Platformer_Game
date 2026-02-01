@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7997057401748579158}
   - component: {fileID: 7997057401748579152}
   - component: {fileID: 7997057401748579153}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7997057402291080941}
   - component: {fileID: 7997057402291080940}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ThrowPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}

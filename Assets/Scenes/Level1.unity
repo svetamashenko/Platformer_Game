@@ -5722,6 +5722,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 580632926, guid: 23c61025b641df54599281374d4ffef3, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1214444797}
+    - target: {fileID: 580632926, guid: 23c61025b641df54599281374d4ffef3, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Switch
+      objectReference: {fileID: 0}
     - target: {fileID: 980623357, guid: 23c61025b641df54599281374d4ffef3, type: 3}
       propertyPath: _sceneName
       value: Level2
@@ -7320,6 +7328,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508c74d6ffd74834785cf60cf169893e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1214444797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 580632925, guid: 23c61025b641df54599281374d4ffef3,
+    type: 3}
+  m_PrefabInstance: {fileID: 691572246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221f06b5898d2ba4fbd56f54fb6a9a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1236115770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8656,6 +8676,11 @@ PrefabInstance:
       propertyPath: _objectToDestroy
       value: 
       objectReference: {fileID: 108447173}
+    - target: {fileID: 6534082216942684559, guid: 3ac4db5c5c169444f979b3d238e8cd52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac4db5c5c169444f979b3d238e8cd52, type: 3}
 --- !u!1001 &669216483621612868
@@ -8752,7 +8777,7 @@ PrefabInstance:
     - target: {fileID: 2305043955240431435, guid: 56fa1212819fd294d803c35b2cdeea77,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.25
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 2305043955240431435, guid: 56fa1212819fd294d803c35b2cdeea77,
         type: 3}
