@@ -28,12 +28,14 @@ namespace Assets.PixelCrew.Creatures.Mobs
         private static readonly int MeleeAttackKey = Animator.StringToHash("melee");
         private static readonly int RangeAttackKey = Animator.StringToHash("range");
 
+        private PlaySoundsComponent _sounds;
         private Animator _animator;
         private bool _hasFiredOnce;
 
         private void Start()
         {
             _animator = GetComponent<Animator>();
+            _sounds = GetComponent<PlaySoundsComponent>();
             _hasFiredOnce = false;
         }
 
@@ -41,7 +43,6 @@ namespace Assets.PixelCrew.Creatures.Mobs
         {
             if (_vision.IsTouchingLayer)
             {
-                // Сброс флага при входе в зону видимости
                 if (!_hasFiredOnce)
                 {
                     _rangeCooldown.ResetWithDelayPercent(_initialDelayPercent);
@@ -72,7 +73,6 @@ namespace Assets.PixelCrew.Creatures.Mobs
             }
             else
             {
-                // Сброс флага, когда игрок выходит из зоны
                 _hasFiredOnce = false;
             }
         }
@@ -82,6 +82,7 @@ namespace Assets.PixelCrew.Creatures.Mobs
             if (_hasRangeAttack)
             {
                 _animator.SetTrigger(RangeAttackKey);
+                _sounds.Play("Range");
             }
         }
 
@@ -90,6 +91,7 @@ namespace Assets.PixelCrew.Creatures.Mobs
             if (_hasMeleeAttack)
             {
                 _animator.SetTrigger(MeleeAttackKey);
+                _sounds.Play("Melee");
             }
         }
 

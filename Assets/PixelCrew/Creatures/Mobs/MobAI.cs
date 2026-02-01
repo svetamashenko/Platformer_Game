@@ -91,6 +91,8 @@ namespace Assets.PixelCrew.Creatures.Mobs
         {
             while (_canAttack.IsTouchingLayer)
             {
+                PlaySoundsComponent sounds = _creature.GetComponent<PlaySoundsComponent>();
+                sounds.Play("Melee");
                 _creature.Attack();
                 yield return new WaitForSeconds(_attackCooldown);
             }

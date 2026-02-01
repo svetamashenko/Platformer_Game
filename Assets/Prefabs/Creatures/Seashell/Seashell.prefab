@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2462602847697975853}
   - component: {fileID: 2462602847697975852}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: PearlThrowPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 2462602848503672882}
   - component: {fileID: 2462602848503672883}
   - component: {fileID: 2462602848503672844}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,9 +359,31 @@ MonoBehaviour:
           m_StringArgument: hit
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2767692023493232858}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hurt
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDie:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2767692023493232858}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Die
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1848084308193268027}
         m_MethodName: SpawnObject
         m_Mode: 1
@@ -427,6 +449,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 729bbef54d321914cabcfacf5c61e259, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: b1300b02274764a4f955c452e32ac1e1, type: 3}
+  - _id: Die
+    _clip: {fileID: 8300000, guid: e3f41019d742a2846af80a6eeef0c891, type: 3}
 --- !u!1 &2462602849198969920
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +464,7 @@ GameObject:
   - component: {fileID: 2462602849198969924}
   - component: {fileID: 2462602849198969925}
   - component: {fileID: 2462602849198969926}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}

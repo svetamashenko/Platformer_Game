@@ -5517,7 +5517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.407158, y: -0.9965234, z: -10}
+  m_LocalPosition: {x: -0.37012577, y: -0.9981575, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6382,6 +6382,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1059963845 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5744441376355571226, guid: 95ccc9ec9197493459ec48cdcc1ead98,
+    type: 3}
+  m_PrefabInstance: {fileID: 2669161335321326739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1072905931
 GameObject:
   m_ObjectHideFlags: 0
@@ -7457,7 +7463,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247260626}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.75, z: 0}
   m_LocalScale: {x: 10, y: 8.877562, z: 1.0578992}
   m_Children: []
@@ -8866,6 +8872,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructableBarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 4403550572055059903, guid: 95ccc9ec9197493459ec48cdcc1ead98,
+        type: 3}
+      propertyPath: _source
+      value: 
+      objectReference: {fileID: 1059963845}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ccc9ec9197493459ec48cdcc1ead98, type: 3}
 --- !u!1001 &3809824088903173541

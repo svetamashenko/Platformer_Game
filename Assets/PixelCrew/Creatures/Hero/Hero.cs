@@ -210,6 +210,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (Potions > 0)
             {
+                Sounds.Play("Drink");
                 _health.ModifyHealth(healing);
                 _session.Data.Inventory.Remove("HealthPotion", 1);
             }

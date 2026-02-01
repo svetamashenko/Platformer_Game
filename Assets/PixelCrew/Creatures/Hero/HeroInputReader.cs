@@ -80,8 +80,6 @@ namespace PixelCrew.Creatures.Hero
         {
             if (context.canceled)
             {
-                Sounds = GetComponent<PlaySoundsComponent>();
-                Sounds.Play("Drink");
                 _hero.ApplyHealing(_healingOfPotion);
             }
         }

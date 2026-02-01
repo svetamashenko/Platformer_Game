@@ -118,6 +118,29 @@ MonoBehaviour:
     OnComplete:
       m_PersistentCalls:
         m_Calls: []
+  - Name: collect
+    Loop: 0
+    Sprites:
+    - {fileID: -4986890610287934012, guid: 3bc0044924338644a97827f106515d07, type: 3}
+    - {fileID: 6143208460787649835, guid: 3bc0044924338644a97827f106515d07, type: 3}
+    - {fileID: 7609282858266732271, guid: 3bc0044924338644a97827f106515d07, type: 3}
+    - {fileID: -6288512792030432889, guid: 3bc0044924338644a97827f106515d07, type: 3}
+    AllowNext: 0
+    NextStateName: 
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2305043955240431439}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _frameRate: 10
   _fadeDuration: 0.5
 --- !u!58 &2305043955240431436
@@ -177,15 +200,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2305043955240431439}
-        m_MethodName: DestroyObject
-        m_Mode: 1
+      - m_Target: {fileID: 2305043955240431433}
+        m_MethodName: SetClip
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: collect
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2305043955240431439

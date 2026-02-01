@@ -5723,6 +5723,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: b1300b02274764a4f955c452e32ac1e1, type: 3}
   - _id: Drink
     _clip: {fileID: 8300000, guid: be766eb4c8b127e439752ced8e517a63, type: 3}
+  - _id: Platform
+    _clip: {fileID: 8300000, guid: e0328a0a66683c742848cc703b187072, type: 3}
 --- !u!81 &7322695580526344103
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5823,7 +5825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5289839413772469516
 Transform:
   m_ObjectHideFlags: 0
