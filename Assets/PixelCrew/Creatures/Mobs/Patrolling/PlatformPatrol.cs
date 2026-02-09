@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine;
 
-
 namespace Assets.PixelCrew.Creatures.Mobs.Patrolling
 {
     public class PlatformPatrol : Patrol
@@ -15,13 +14,11 @@ namespace Assets.PixelCrew.Creatures.Mobs.Patrolling
         private Creature _creature;
         private bool _isFacingRight = true;
 
-
         private void Awake()
         {
             _creature = GetComponent<Creature>();
             _obstacleCheckDistance += _lookaheadDistance;
         }
-
 
         public override IEnumerator DoPatrol()
         {
@@ -56,9 +53,7 @@ namespace Assets.PixelCrew.Creatures.Mobs.Patrolling
             else
                 startPos += Vector2.left * _lookaheadDistance;
 
-
             Vector2 checkPos = startPos + Vector2.down * 0.1f;
-
 
             Collider2D hit = Physics2D.OverlapBox(
                 checkPos,
@@ -73,10 +68,13 @@ namespace Assets.PixelCrew.Creatures.Mobs.Patrolling
         private bool CheckObstacleInFront()
         {
             Vector2 startPos = (Vector2)transform.position;
-            startPos += Vector2.up;
+            Vector2 offset = _isFacingRight
+                ? new Vector2(0.5f, 0.2f)
+                : new Vector2(-0.5f, 0.2f);
+
+            startPos += offset;
 
             Vector2 direction = _isFacingRight ? Vector2.right : Vector2.left;
-
 
             RaycastHit2D hit = Physics2D.Raycast(
                 startPos,
@@ -92,30 +90,33 @@ namespace Assets.PixelCrew.Creatures.Mobs.Patrolling
         {
             if (!Application.isPlaying) return;
 
-            var startPos = transform.position;
-            Vector2 groundCheckPos, obstacleCheckPos;
+            Vector2 startPos = (Vector2)transform.position;
 
+            Vector2 groundCheckPos = startPos;
             if (_isFacingRight)
-            {
-                groundCheckPos = (Vector2)startPos + Vector2.right * _lookaheadDistance;
-                obstacleCheckPos = (Vector2)startPos + Vector2.right * _obstacleCheckDistance;
-            }
+                groundCheckPos += Vector2.right * _lookaheadDistance;
             else
-            {
-                groundCheckPos = (Vector2)startPos + Vector2.left * _lookaheadDistance;
-                obstacleCheckPos = (Vector2)startPos + Vector2.left * _obstacleCheckDistance;
-            }
+                groundCheckPos += Vector2.left * _lookaheadDistance;
 
             groundCheckPos += Vector2.down * 0.1f;
-            obstacleCheckPos += Vector2.up * 0.5f;
 
             Gizmos.color = CheckGroundInFront() ? Color.green : Color.red;
             Gizmos.DrawWireCube(groundCheckPos, _groundCheckSize);
 
-            Gizmos.color = Color.blue; Gizmos.DrawLine(
-                 startPos + new Vector3(0, 0.5f, 0),
-                 obstacleCheckPos
-             );
+            Vector2 obstacleStartPos = startPos;
+            Vector2 offset = _isFacingRight
+                ? new Vector2(0.5f, 0.2f)
+                : new Vector2(-0.5f, 0.2f);
+
+            obstacleStartPos += offset;
+
+            Vector2 direction = _isFacingRight ? Vector2.right : Vector2.left;
+            Vector2 obstacleEndPos = obstacleStartPos + direction * _obstacleCheckDistance;
+
+
+            Gizmos.color = CheckObstacleInFront() ? Color.magenta : Color.cyan;
+            Gizmos.DrawLine(obstacleStartPos, obstacleEndPos);
+            Gizmos.DrawRay(obstacleStartPos, direction * _obstacleCheckDistance);
         }
     }
 }

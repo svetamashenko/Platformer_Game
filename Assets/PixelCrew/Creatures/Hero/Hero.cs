@@ -154,7 +154,11 @@ namespace PixelCrew.Creatures.Hero
         public void Throw()
         {
 
-            if (SwordCount == 1)
+            if (SwordCount <= 0)
+            {
+                Debug.Log("Hero hasn't got swords!");
+            }
+            else if (SwordCount == 1)
             {
                 Debug.Log("Hero can't throw the last one sword!");
             }

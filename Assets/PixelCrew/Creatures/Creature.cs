@@ -32,18 +32,23 @@ namespace Assets.PixelCrew.Creatures
         private static readonly int HitKey = Animator.StringToHash("hit");
         private static readonly int AttackKey = Animator.StringToHash("attack");
         protected static readonly int ThrowKey = Animator.StringToHash("throw");
+        private int _startSpeed;
 
         protected virtual void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
             Sounds = GetComponent<PlaySoundsComponent>();
+            _startSpeed = _speed;
         }
 
         public void SetDirection(Vector2 direction)
         {
             Direction = direction;
         }
+
+        public void SetSpeed(int speed) => _speed = speed;
+        public void ResetSpeed() { _speed = _startSpeed; }
 
         protected virtual void Update()
         {

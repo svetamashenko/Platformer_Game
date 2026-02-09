@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7997057401748579158}
   - component: {fileID: 7997057401748579152}
   - component: {fileID: 7997057401748579153}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7997057402291080941}
   - component: {fileID: 7997057402291080940}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ThrowPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 7997057402993602773}
   - component: {fileID: 7997057402993602772}
   - component: {fileID: 7158007077941736320}
+  - component: {fileID: 251977982}
   m_Layer: 12
   m_Name: Head 3.2
   m_TagString: Enemy
@@ -183,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 7997057402993602770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: -2.032, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 7997057401748579159}
   - {fileID: 7997057402291080941}
@@ -405,3 +406,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &251977982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7997057402993602770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dc5be4b9368be4cbe6fd6881876c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  _sounds:
+  - _id: Jump
+    _clip: {fileID: 8300000, guid: 10470be14ebc1a043ae668594a1bfbe3, type: 3}
+  - _id: Melee
+    _clip: {fileID: 8300000, guid: a38ccefa60d4fef45beced0ade6889c9, type: 3}
+  - _id: Range
+    _clip: {fileID: 8300000, guid: 729bbef54d321914cabcfacf5c61e259, type: 3}
+  - _id: Hurt
+    _clip: {fileID: 8300000, guid: b1300b02274764a4f955c452e32ac1e1, type: 3}
+  - _id: Die
+    _clip: {fileID: 8300000, guid: e3f41019d742a2846af80a6eeef0c891, type: 3}

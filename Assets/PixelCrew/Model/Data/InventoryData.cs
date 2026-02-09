@@ -12,7 +12,7 @@ namespace PixelCrew.Model.Data
 
         public delegate void OnInventoryChanged(string id, int value);
 
-        public OnInventoryChanged OnChanged;
+        public event OnInventoryChanged OnChanged;
 
         public void Add(string id, int value)
         {
@@ -35,20 +35,14 @@ namespace PixelCrew.Model.Data
 
             if (itemDef.IsNonStackable)
             {
-                var existingItems = _inventory.FindAll(item => item.Id == id);
-
-                if (existingItems.Count == 1 && existingItems[0].Value == 0)
-                {
-                    existingItems[0].Value = 1;
-                    OnChanged?.Invoke(id, 1);
-                    return;
-                }
-
-                for (int i = 0; i < value; i++)
+                int count = value;
+                while (count > 0)
                 {
                     var item = new InventoryItemData(id);
+                    item.Value = 1;
                     _inventory.Add(item);
                     OnChanged?.Invoke(id, 1);
+                    count--;
                 }
             }
             else
@@ -57,12 +51,18 @@ namespace PixelCrew.Model.Data
                 if (item == null)
                 {
                     item = new InventoryItemData(id);
+                    item.Value = value;
                     _inventory.Add(item);
                 }
-                item.Value += value;
+                else
+                {
+                    int prevValue = item.Value;
+                    item.Value += value;
+                }
                 OnChanged?.Invoke(id, value);
             }
         }
+
         public InventoryData Clone()
         {
             var newInventory = new InventoryData();
@@ -151,7 +151,7 @@ namespace PixelCrew.Model.Data
         public InventoryItemData(string id)
         {
             Id = id;
-            Value = 1;
+            Value = 0;
         }
     }
 }

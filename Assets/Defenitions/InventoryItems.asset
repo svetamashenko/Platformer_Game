@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - _id: Coin
-    IsNonStackable: 0
+    IsNonStackable: 1
     MaxStack: 0
   - _id: Sword
     IsNonStackable: 0

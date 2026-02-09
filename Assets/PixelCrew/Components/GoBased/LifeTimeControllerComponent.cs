@@ -9,6 +9,8 @@ namespace PixelCrew.Components.GoBased
     {
         [SerializeField] private float activeDuration = 3f;
         [SerializeField] private UnityEvent onDisappearanceStarted;
+        [SerializeField] private UnityEvent beforeDestroy;
+        [SerializeField] private bool onStart = false;
 
         private SpriteAnimation _spriteAnim;
         private bool _isDisappearing = false;
@@ -20,22 +22,25 @@ namespace PixelCrew.Components.GoBased
 
         private void Start()
         {
-            StartCoroutine(LifetimeCountdown());
+            if (onStart)
+            {
+                StartCoroutine(LifetimeCountdown());
+            }
         }
 
         public void ForceDisappear()
         {
             if (_isDisappearing) return;
 
-            _isDisappearing = _spriteAnim.AddDisappearing;
-            onDisappearanceStarted?.Invoke();
-
             if (_spriteAnim != null)
             {
+                _isDisappearing = true;
+                onDisappearanceStarted?.Invoke();
                 _spriteAnim.StartDisappearing();
             }
             else
             {
+                BeforeDestroy();
                 Destroy(gameObject);
             }
         }
@@ -44,6 +49,21 @@ namespace PixelCrew.Components.GoBased
         {
             yield return new WaitForSeconds(activeDuration);
             ForceDisappear();
+        }
+
+        public void StartTimer()
+        {
+            StartCoroutine(LifetimeCountdown());
+        }
+
+        private void BeforeDestroy()
+        {
+            beforeDestroy?.Invoke();
+        }
+
+        private void OnDestroy()
+        {
+            BeforeDestroy();
         }
     }
 }
