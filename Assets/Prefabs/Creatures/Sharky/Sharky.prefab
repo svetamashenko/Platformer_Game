@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   IsTouchingLayer: 0
 --- !u!1 &1584620035047186253
 GameObject:
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   IsTouchingLayer: 0
 --- !u!1 &1630348182692065558
 GameObject:
@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 1584620034961898318}
   - component: {fileID: 1584620034775516420}
   - component: {fileID: 478291204}
+  - component: {fileID: 491081292}
   m_Layer: 8
   m_Name: Sharky
   m_TagString: Enemy
@@ -614,7 +615,7 @@ MonoBehaviour:
   - Id: Exclamation
     Component: {fileID: 5683066034216504119}
   - Id: Attack
-    Component: {fileID: 0}
+    Component: {fileID: 4717030648444654491}
   - Id: Miss
     Component: {fileID: 3978836639179667567}
   - Id: Fall
@@ -649,9 +650,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundCheck: {fileID: 1584620035018962083}
-  _lookaheadDistance: 0.5
+  _lookaheadDistance: 0.2
   _groundCheckSize: {x: 0.2, y: 0.1}
-  _obstacleCheckDistance: 0.4
+  _obstacleCheckDistance: 0.2
+--- !u!114 &491081292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654875537483800745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dc5be4b9368be4cbe6fd6881876c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  _sounds:
+  - _id: Jump
+    _clip: {fileID: 8300000, guid: 10470be14ebc1a043ae668594a1bfbe3, type: 3}
+  - _id: Melee
+    _clip: {fileID: 8300000, guid: a38ccefa60d4fef45beced0ade6889c9, type: 3}
+  - _id: Range
+    _clip: {fileID: 8300000, guid: 729bbef54d321914cabcfacf5c61e259, type: 3}
+  - _id: Hurt
+    _clip: {fileID: 8300000, guid: b1300b02274764a4f955c452e32ac1e1, type: 3}
+  - _id: Drink
+    _clip: {fileID: 8300000, guid: be766eb4c8b127e439752ced8e517a63, type: 3}
+  - _id: Platform
+    _clip: {fileID: 8300000, guid: e0328a0a66683c742848cc703b187072, type: 3}
 --- !u!1 &4828331170610217198
 GameObject:
   m_ObjectHideFlags: 0

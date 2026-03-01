@@ -4,7 +4,7 @@ namespace PixelCrew.Components.GoBased
 {
     public class NoJumpComponent : MonoBehaviour
     {
-        [SerializeField] private float slowFactor = 0.1f;
+        //[SerializeField] private float slowFactor = 0.1f;
 
         private GameObject _hero;
         private Rigidbody2D _heroRb;
