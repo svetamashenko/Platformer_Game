@@ -6,7 +6,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Vfx
+  m_Name: Sfx
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -66,7 +66,15 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: dcf34db74966a87478359d1925bde481
   m_FloatValues:
-    7cd08c4fd2c1e0b4da481a950072ef1d: -8.362404
+    fe4a0b5027badbd4ea87908d6cdcdbad: 0
+    82ae876360510624da2884754d23ee61: 0
+    17ff7f961a63f33438e65221262d3786: 40
+    49304258f6f5e1742b0553ef2d8386e3: 0
+    f47e9278c40f4504e823fb47b34752f7: 0.5
+    e4164049a7133ed4580de8083b05114b: 3
+    dfca1eac55998214c9ecfd120f2c21da: 30.1
+    d6c4833ef58232447b169a9d8a7ff629: 8
+    7cd08c4fd2c1e0b4da481a950072ef1d: 3.9
   m_TransitionOverrides: {}
 --- !u!244 &2493730002626836966
 AudioMixerEffectController:

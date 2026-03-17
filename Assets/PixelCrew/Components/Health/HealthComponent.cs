@@ -12,10 +12,14 @@ namespace PixelCrew.Components.Health
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private HealthChangeEvent _onChange;
 
-        [SerializeField] private int _maxHealth = 9;
+        [SerializeField] private int _maxHealth = 10;
 
         private bool _isInvincible;
         private int _pendingDamage;
+
+        public int CurrentHealth => _health;
+        public int MaxHealth => _maxHealth;
+        public event Action<int> OnHealthChanged;
 
         public void ModifyHealth(int healthValue)
         {
@@ -37,7 +41,9 @@ namespace PixelCrew.Components.Health
 
             if (_health <= 0)
             {
+                OnHealthChanged?.Invoke(CurrentHealth);
                 _onDie?.Invoke();
+                OnHealthChanged?.Invoke(CurrentHealth);
                 return;
             }
             else
@@ -47,6 +53,7 @@ namespace PixelCrew.Components.Health
                     _health = _maxHealth;
                 }
                 _onChange?.Invoke(_health);
+                OnHealthChanged?.Invoke(_health);
 
                 if (damage < 0 && _health > 0)
                     _onDamage?.Invoke();

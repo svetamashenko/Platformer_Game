@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 1104908140}
   - component: {fileID: 1848084308193268027}
   - component: {fileID: 2767692023493232858}
+  - component: {fileID: 45744073}
   m_Layer: 12
   m_Name: Seashell
   m_TagString: Enemy
@@ -412,7 +413,7 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 9
+  _maxHealth: 2
 --- !u!114 &1848084308193268027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dc5be4b9368be4cbe6fd6881876c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds:
   - _id: Jump
     _clip: {fileID: 8300000, guid: 10470be14ebc1a043ae668594a1bfbe3, type: 3}
@@ -451,6 +451,21 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: b1300b02274764a4f955c452e32ac1e1, type: 3}
   - _id: Die
     _clip: {fileID: 8300000, guid: e3f41019d742a2846af80a6eeef0c891, type: 3}
+--- !u!114 &45744073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462602848750408698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79ab7b0f7f64084ba7bc1d1ad46a27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiPrefab: {fileID: 5727891827578044050, guid: a9db88459f84724439dc8aeb5bcb353f,
+    type: 3}
+  verticalOffset: 0.5
 --- !u!1 &2462602849198969920
 GameObject:
   m_ObjectHideFlags: 0

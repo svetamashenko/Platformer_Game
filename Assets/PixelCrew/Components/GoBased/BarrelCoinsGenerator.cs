@@ -49,10 +49,10 @@ namespace PixelCrew.Components.GoBased
             trigger._action.AddListener((GameObject collider) =>
             {
                 _hero.AddToInventory("Coin", value);
-                AudioSource _source = coin.GetComponent<AudioSource>();
-                _source.Play();
                 SpriteAnimation animation = coin.GetComponent<SpriteAnimation>();
                 animation.SetClip("destroy");
+                PlaySoundsComponent playSounds = coin.GetComponent<PlaySoundsComponent>();
+                playSounds.Play("collect");
             });
         }
     }

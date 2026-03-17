@@ -8,13 +8,13 @@ namespace PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] private PlayerData _data;
-        private readonly Dictionary<string, PlayerData> _storage = new Dictionary<string, PlayerData>();
-        public PlayerData Data => _data;
-        private string _currentScene;
+        [SerializeField] private PlayerData _data; private readonly Dictionary<string, PlayerData> _storage = new Dictionary<string, PlayerData>(); public PlayerData Data => _data; private string _currentScene;
+
 
         private void Awake()
         {
+            LoadHud();
+
             if (FindObjectOfType<GameSession>() != this)
             {
                 Destroy(gameObject);
@@ -23,6 +23,11 @@ namespace PixelCrew.Model
             DontDestroyOnLoad(gameObject);
             UpdateScene();
             SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void LoadHud()
+        {
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
         private void OnDestroy()

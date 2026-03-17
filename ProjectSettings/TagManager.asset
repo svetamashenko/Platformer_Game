@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Interactables
   - Walls
+  - SfxAudioSource
   layers:
   - Default
   - TransparentFX

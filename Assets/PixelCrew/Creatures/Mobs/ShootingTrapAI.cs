@@ -62,8 +62,11 @@ namespace Assets.PixelCrew.Creatures.Mobs
                     }
                 }
 
-                if (_hasRangeAttack)
+                if (_hasRangeAttack) 
                 {
+                    if (_hasMeleeAttack && _meleeCanAttack.IsTouchingLayer)
+                        return;
+
                     if (_rangeCooldown.IsReady)
                     {
                         RangeAttack();
