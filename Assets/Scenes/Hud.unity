@@ -886,7 +886,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1463238865414395934, guid: 0beb4177b88b3fe44abea639d0cbe85f,
           type: 3}
-        m_MethodName: Open
+        m_MethodName: OpenMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1044,6 +1044,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2104001394}
     m_Modifications:
+    - target: {fileID: 5727891825605019550, guid: a9db88459f84724439dc8aeb5bcb353f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.19999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727891826736441707, guid: a9db88459f84724439dc8aeb5bcb353f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.19938135
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727891826902938629, guid: a9db88459f84724439dc8aeb5bcb353f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.1953125
+      objectReference: {fileID: 0}
     - target: {fileID: 5727891827578044050, guid: a9db88459f84724439dc8aeb5bcb353f,
         type: 3}
       propertyPath: m_Name

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5678083459127484831}
   - component: {fileID: 5678083459127484828}
   - component: {fileID: 712485600199243188}
+  - component: {fileID: 664274795}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: SfxAudioSource
@@ -152,6 +153,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: e0328a0a66683c742848cc703b187072, type: 3}
+--- !u!114 &664274795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5678083459127484802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a8a63223d2d43b8f4b79b6074adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 51d48ef4f183c4540b78b31d6b15b099, type: 3}
 --- !u!1 &5678083459183324418
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +335,7 @@ GameObject:
   - component: {fileID: 5678083459730630318}
   - component: {fileID: 5678083459730630319}
   - component: {fileID: 6786486178568992285}
+  - component: {fileID: 2116660174}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: SfxAudioSource
@@ -460,6 +475,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: e0328a0a66683c742848cc703b187072, type: 3}
+--- !u!114 &2116660174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5678083459730630317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a8a63223d2d43b8f4b79b6074adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 51d48ef4f183c4540b78b31d6b15b099, type: 3}
 --- !u!1 &5678083459813307595
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +657,7 @@ GameObject:
   - component: {fileID: 5678083460046419114}
   - component: {fileID: 5678083460046419115}
   - component: {fileID: 8771690846837916978}
+  - component: {fileID: 1845885115}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: SfxAudioSource
@@ -768,6 +797,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: e0328a0a66683c742848cc703b187072, type: 3}
+--- !u!114 &1845885115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5678083460046419113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a8a63223d2d43b8f4b79b6074adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 51d48ef4f183c4540b78b31d6b15b099, type: 3}
 --- !u!1 &5678083460260342249
 GameObject:
   m_ObjectHideFlags: 0

@@ -131,9 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 103444100}
   - component: {fileID: 103444099}
-  - component: {fileID: 103444098}
-  - component: {fileID: 103444097}
-  - component: {fileID: 103444096}
   - component: {fileID: 103444101}
   m_Layer: 0
   m_Name: MainCamera
@@ -142,104 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &103444096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103444095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &103444097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103444095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 1
-  m_CropFrameY: 1
-  m_StretchFill: 1
---- !u!114 &103444098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103444095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb5e774f027461f4aa8461046b6c033d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputTimeToLive: 1.5
-  _cheats:
-  - Name: money
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: AddToBalance
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 100
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Name: reset
-    Action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: Reload
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!20 &103444099
 Camera:
   m_ObjectHideFlags: 0
@@ -280,7 +179,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &103444100
@@ -485,25 +384,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5678083460694723917}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &664274790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5678083459127484802, guid: 33f373e8a05bd914eae9d5709e93353f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5678083460694723917}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &664274795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664274790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e095a8a63223d2d43b8f4b79b6074adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 51d48ef4f183c4540b78b31d6b15b099, type: 3}
 --- !u!1 &1163470534
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,44 +711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 0
---- !u!1 &1845885110 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5678083460046419113, guid: 33f373e8a05bd914eae9d5709e93353f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5678083460694723917}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1845885115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845885110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e095a8a63223d2d43b8f4b79b6074adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 51d48ef4f183c4540b78b31d6b15b099, type: 3}
---- !u!1 &2116660169 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5678083459730630317, guid: 33f373e8a05bd914eae9d5709e93353f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5678083460694723917}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2116660174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116660169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e095a8a63223d2d43b8f4b79b6074adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 51d48ef4f183c4540b78b31d6b15b099, type: 3}
 --- !u!1001 &5678083460694723917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -876,11 +718,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1247358044}
     m_Modifications:
-    - target: {fileID: 5678083459127484802, guid: 33f373e8a05bd914eae9d5709e93353f,
-        type: 3}
-      propertyPath: m_TagString
-      value: SfxAudioSource
-      objectReference: {fileID: 0}
     - target: {fileID: 5678083459127484829, guid: 33f373e8a05bd914eae9d5709e93353f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -931,11 +768,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5678083459730630317, guid: 33f373e8a05bd914eae9d5709e93353f,
-        type: 3}
-      propertyPath: m_TagString
-      value: SfxAudioSource
-      objectReference: {fileID: 0}
     - target: {fileID: 5678083460046419112, guid: 33f373e8a05bd914eae9d5709e93353f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -960,11 +792,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678083460046419113, guid: 33f373e8a05bd914eae9d5709e93353f,
-        type: 3}
-      propertyPath: m_TagString
-      value: SfxAudioSource
       objectReference: {fileID: 0}
     - target: {fileID: 5678083461126300296, guid: 33f373e8a05bd914eae9d5709e93353f,
         type: 3}
@@ -1075,16 +902,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainMenuWindow
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678083461194223050, guid: 33f373e8a05bd914eae9d5709e93353f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678083461194223050, guid: 33f373e8a05bd914eae9d5709e93353f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33f373e8a05bd914eae9d5709e93353f, type: 3}

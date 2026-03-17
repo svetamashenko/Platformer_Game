@@ -2,6 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Assets.PixelCrew.Components.UI.MainMenu
 {
@@ -38,6 +39,26 @@ namespace Assets.PixelCrew.Components.UI.MainMenu
 #endif
             };
             Close();
+        }
+
+        public void OpenMenu()
+        {
+            GameObject newCanvasGO = new GameObject("NewCanvas");
+            Canvas newCanvas = newCanvasGO.AddComponent<Canvas>();
+            newCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            newCanvas.pixelPerfect = true;
+
+            CanvasScaler scaler = newCanvasGO.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(320f, 180f);
+            scaler.referencePixelsPerUnit = 32;
+
+            newCanvasGO.AddComponent<GraphicRaycaster>();
+
+            GameObject settingsWindowPrefab = Resources.Load<GameObject>("UI/GameMenuWindow Variant");
+            GameObject instance = Instantiate(settingsWindowPrefab, newCanvas.transform);
+
+            newCanvasGO.transform.SetAsLastSibling();
         }
 
         public override void OnCloseAnimetionCompleted()
