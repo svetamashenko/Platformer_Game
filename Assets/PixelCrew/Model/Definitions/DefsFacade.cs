@@ -7,7 +7,9 @@ namespace PixelCrew.Model.Definitions
     public class DefsFacade : ScriptableObject
     {
         [SerializeField] private InventoryItemsDef _items;
+        [SerializeField] private ThrowableItemsDef _throwableItems;
         public InventoryItemsDef Items => _items;
+        public ThrowableItemsDef ThrowableItems => _throwableItems;
         public PlayerDefs Player;
 
         private static DefsFacade _instance;

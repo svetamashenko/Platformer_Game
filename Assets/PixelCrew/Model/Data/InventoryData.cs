@@ -1,6 +1,8 @@
-﻿using PixelCrew.Model.Definitions;
+﻿using Assets.PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -33,13 +35,15 @@ namespace PixelCrew.Model.Data
                 value = Mathf.Min(value, availableSpace);
             }
 
-            if (itemDef.IsNonStackable)
+            if (!itemDef.HasTag(ItemTag.Stackable))
             {
                 int count = value;
                 while (count > 0)
                 {
-                    var item = new InventoryItemData(id);
-                    item.Value = 1;
+                    var item = new InventoryItemData(id)
+                    {
+                        Value = 1
+                    };
                     _inventory.Add(item);
                     OnChanged?.Invoke(id, 1);
                     count--;
@@ -50,17 +54,33 @@ namespace PixelCrew.Model.Data
                 var item = GetItem(id);
                 if (item == null)
                 {
-                    item = new InventoryItemData(id);
-                    item.Value = value;
+                    item = new InventoryItemData(id)
+                    {
+                        Value = value
+                    };
                     _inventory.Add(item);
                 }
                 else
                 {
-                    int prevValue = item.Value;
                     item.Value += value;
                 }
                 OnChanged?.Invoke(id, value);
             }
+        }
+
+        internal InventoryItemData[] GetAll(params ItemTag[] tags)
+        {
+            var retValue = new List<InventoryItemData>();
+            foreach (var item in _inventory)
+            {
+                var itemDef = DefsFacade.I.Items.Get(item.Id);
+                var isAllRequirementsMet = tags.All(x => itemDef.HasTag(x));
+                if (isAllRequirementsMet)
+                {
+                    retValue.Add(item);
+                }
+            }
+            return retValue.ToArray();
         }
 
         public InventoryData Clone()
@@ -85,7 +105,7 @@ namespace PixelCrew.Model.Data
             var itemDef = DefsFacade.I.Items.Get(id);
             if (itemDef.IsVoid || value <= 0) return;
 
-            if (itemDef.IsNonStackable)
+            if (!itemDef.HasTag(ItemTag.Stackable))
             {
                 int removed = 0;
                 for (int i = _inventory.Count - 1; i >= 0; i--)

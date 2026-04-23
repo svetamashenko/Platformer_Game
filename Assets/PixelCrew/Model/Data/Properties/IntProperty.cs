@@ -10,5 +10,10 @@ namespace Assets.PixelCrew.Model.Data.Properties
         public IntProperty() : base()
         {
         }
+
+        internal void Subscribe(object onIndexChanged)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

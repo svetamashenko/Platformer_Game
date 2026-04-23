@@ -1,82 +1,70 @@
 fileFormatVersion: 2
-guid: ef9cb91f68d222b489c56a2865c0acf9
+guid: 66e1834988555b442ab54c0138d717fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1185527514606905908
-    second: Potions_0
+      213: 9003551563866706664
+    second: Potions 1_0
   - first:
-      213: -1061600653231999548
-    second: Potions_1
+      213: 7224097813231431937
+    second: Potions 1_1
   - first:
-      213: -3065595510956808684
-    second: Potions_2
+      213: -2971316745106835116
+    second: Potions 1_2
   - first:
-      213: 6997616985800771554
-    second: Potions_3
+      213: 3594444685947899233
+    second: Potions 1_3
   - first:
-      213: 8618505411793156745
-    second: Potions_4
+      213: -5676039404267669247
+    second: Potions 1_4
   - first:
-      213: -1972361127685065434
-    second: Potions_5
+      213: 5894582767254941048
+    second: Potions 1_5
   - first:
-      213: -5226445311955339714
-    second: Potions_6
+      213: -3231788942464667918
+    second: Potions 1_6
   - first:
-      213: 3714227102187029162
-    second: Potions_7
+      213: 1060510213531972308
+    second: Potions 1_7
   - first:
-      213: -6202940564662568092
-    second: Potions_8
+      213: 8774926562176219453
+    second: Potions 1_8
   - first:
-      213: -8747976068718324687
-    second: Potions_9
+      213: -9121806329661647366
+    second: Potions 1_9
   - first:
-      213: 7142050841817600938
-    second: Potions_10
+      213: -5399323166272244341
+    second: Potions 1_10
   - first:
-      213: -860807820763296739
-    second: Potions_11
+      213: 4878798946111234173
+    second: Potions 1_11
   - first:
-      213: -5249288142952506341
-    second: Potions_12
+      213: 7785522793190746370
+    second: Potions 1_12
   - first:
-      213: 1089735312403315716
-    second: Potions_13
+      213: -27009058695365653
+    second: Potions 1_13
   - first:
-      213: 2011574832808370117
-    second: Potions_14
+      213: -2052632503483515486
+    second: Potions 1_14
   - first:
-      213: -8438763151253471919
-    second: Potions_15
+      213: 2418195604481730243
+    second: Potions 1_15
   - first:
-      213: -7587008787810219046
-    second: Potions_16
+      213: -5367725609082462120
+    second: Potions 1_16
   - first:
-      213: 950379908824699032
-    second: Potions_17
+      213: -7957439678348139406
+    second: Potions 1_17
   - first:
-      213: -512142692958456438
-    second: Potions_18
+      213: -1371583670539123917
+    second: Potions 1_18
   - first:
-      213: 8745225756722806956
-    second: Potions_19
+      213: 1263123236973523308
+    second: Potions 1_19
   - first:
-      213: -7481350877133238684
-    second: Potions_20
-  - first:
-      213: 6040734443530017722
-    second: Potions_21
-  - first:
-      213: 8167133005111728920
-    second: Potions_22
-  - first:
-      213: 2014349484240403859
-    second: Potions_23
-  - first:
-      213: 6326803469982491369
-    second: Potions_24
+      213: 2785581531642825347
+    second: Potions 1_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -107,8 +95,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -162,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Potions_0
+      name: Potions 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 120
-        width: 32
-        height: 40
+        x: 12
+        y: 129
+        width: 9
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43aa89b4ef6d37010800000000000000
-      internalID: 1185527514606905908
+      spriteID: 8e21039c17a03fc70800000000000000
+      internalID: 9003551563866706664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_1
+      name: Potions 1_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 120
-        width: 32
-        height: 40
+        x: 44
+        y: 129
+        width: 9
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c5b8ca94df6441f0800000000000000
-      internalID: -1061600653231999548
+      spriteID: 101f55cafa6214460800000000000000
+      internalID: 7224097813231431937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_2
+      name: Potions 1_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 120
-        width: 32
-        height: 40
+        x: 76
+        y: 129
+        width: 9
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41623600021d475d0800000000000000
-      internalID: -3065595510956808684
+      spriteID: 459bcbcb923c3c6d0800000000000000
+      internalID: -2971316745106835116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_3
+      name: Potions 1_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 120
-        width: 32
-        height: 40
+        x: 108
+        y: 129
+        width: 9
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e705e8d2978c1160800000000000000
-      internalID: 6997616985800771554
+      spriteID: 16d07bec56802e130800000000000000
+      internalID: 3594444685947899233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_4
+      name: Potions 1_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 120
-        width: 32
-        height: 40
+        x: 140
+        y: 129
+        width: 9
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98a76bc52051b9770800000000000000
-      internalID: 8618505411793156745
+      spriteID: 10971891c38aa31b0800000000000000
+      internalID: -5676039404267669247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_5
+      name: Potions 1_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 120
-        width: 32
-        height: 40
+        x: 172
+        y: 129
+        width: 9
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 625fa8f1104c0a4e0800000000000000
-      internalID: -1972361127685065434
+      spriteID: 87dae55cbc3cdc150800000000000000
+      internalID: 5894582767254941048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_6
+      name: Potions 1_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 120
-        width: 32
-        height: 40
+        x: 203
+        y: 129
+        width: 10
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3675eefdafe777b0800000000000000
-      internalID: -5226445311955339714
+      spriteID: 2feab5f54116623d0800000000000000
+      internalID: -3231788942464667918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_7
+      name: Potions 1_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
-        width: 32
-        height: 40
+        x: 11
+        y: 89
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa28cf0eed59b8330800000000000000
-      internalID: 3714227102187029162
+      spriteID: 4d23f3e9b60b7be00800000000000000
+      internalID: 1060510213531972308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_8
+      name: Potions 1_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 80
-        width: 32
-        height: 40
+        x: 43
+        y: 89
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46b3d68cb6abae9a0800000000000000
-      internalID: -6202940564662568092
+      spriteID: d3937ac773dc6c970800000000000000
+      internalID: 8774926562176219453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_9
+      name: Potions 1_9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 80
-        width: 32
-        height: 40
+        x: 74
+        y: 89
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1341d604d12f89680800000000000000
-      internalID: -8747976068718324687
+      spriteID: af59b9af875d86180800000000000000
+      internalID: -9121806329661647366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_10
+      name: Potions 1_10
       rect:
         serializedVersion: 2
-        x: 96
-        y: 80
-        width: 32
-        height: 40
+        x: 107
+        y: 89
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,20 +374,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa351528669ad1360800000000000000
-      internalID: 7142050841817600938
+      spriteID: b853ec6ef20c115b0800000000000000
+      internalID: -5399323166272244341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_11
+      name: Potions 1_11
       rect:
         serializedVersion: 2
-        x: 128
-        y: 80
-        width: 32
-        height: 40
+        x: 139
+        y: 89
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,20 +395,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1c868709dbcd04f0800000000000000
-      internalID: -860807820763296739
+      spriteID: d70a281eac9f4b340800000000000000
+      internalID: 4878798946111234173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_12
+      name: Potions 1_12
       rect:
         serializedVersion: 2
-        x: 160
-        y: 80
-        width: 32
-        height: 40
+        x: 171
+        y: 89
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,20 +416,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c55a3fe38c627b0800000000000000
-      internalID: -5249288142952506341
+      spriteID: 20967de1bbbbb0c60800000000000000
+      internalID: 7785522793190746370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_13
+      name: Potions 1_13
       rect:
         serializedVersion: 2
-        x: 192
-        y: 80
-        width: 32
-        height: 40
+        x: 202
+        y: 89
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,20 +437,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40cbff23e748f1f00800000000000000
-      internalID: 1089735312403315716
+      spriteID: bebbeba776b00aff0800000000000000
+      internalID: -27009058695365653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_14
+      name: Potions 1_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 32
-        height: 40
+        x: 9
+        y: 49
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -470,20 +458,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cf98a417ac8aeb10800000000000000
-      internalID: 2011574832808370117
+      spriteID: 2adb1770d959383e0800000000000000
+      internalID: -2052632503483515486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_15
+      name: Potions 1_15
       rect:
         serializedVersion: 2
-        x: 32
-        y: 40
-        width: 32
-        height: 40
+        x: 40
+        y: 49
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,20 +479,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15d71e9df9d73ea80800000000000000
-      internalID: -8438763151253471919
+      spriteID: 3c66b8217182f8120800000000000000
+      internalID: 2418195604481730243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_16
+      name: Potions 1_16
       rect:
         serializedVersion: 2
-        x: 64
-        y: 40
-        width: 32
-        height: 40
+        x: 73
+        y: 49
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -512,20 +500,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adb0ec684b785b690800000000000000
-      internalID: -7587008787810219046
+      spriteID: 8506fda7ff10285b0800000000000000
+      internalID: -5367725609082462120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_17
+      name: Potions 1_17
       rect:
         serializedVersion: 2
-        x: 96
-        y: 40
-        width: 32
-        height: 40
+        x: 104
+        y: 49
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -533,20 +521,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8901a23ed7d603d00800000000000000
-      internalID: 950379908824699032
+      spriteID: 274e57ad5ce719190800000000000000
+      internalID: -7957439678348139406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_18
+      name: Potions 1_18
       rect:
         serializedVersion: 2
-        x: 128
-        y: 40
-        width: 32
-        height: 40
+        x: 136
+        y: 49
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -554,20 +542,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8536e72fe084e8f0800000000000000
-      internalID: -512142692958456438
+      spriteID: 3330ac92be727fce0800000000000000
+      internalID: -1371583670539123917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_19
+      name: Potions 1_19
       rect:
         serializedVersion: 2
-        x: 160
-        y: 40
-        width: 32
-        height: 40
+        x: 168
+        y: 49
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -575,20 +563,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca04f06dd784d5970800000000000000
-      internalID: 8745225756722806956
+      spriteID: c61395744e3878110800000000000000
+      internalID: 1263123236973523308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potions_20
+      name: Potions 1_20
       rect:
         serializedVersion: 2
-        x: 192
-        y: 40
-        width: 32
-        height: 40
+        x: 200
+        y: 49
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -596,92 +584,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46e8a60e307ec2890800000000000000
-      internalID: -7481350877133238684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potions_21
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abbd211a8fff4d350800000000000000
-      internalID: 6040734443530017722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potions_22
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81b9d03623c775170800000000000000
-      internalID: 8167133005111728920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potions_23
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39df3a5fe2864fb10800000000000000
-      internalID: 2014349484240403859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potions_24
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e2e3003c325dc750800000000000000
-      internalID: 6326803469982491369
+      spriteID: 38a8576f4af58a620800000000000000
+      internalID: 2785581531642825347
       vertices: []
       indices: 
       edges: []

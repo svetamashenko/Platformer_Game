@@ -49,6 +49,7 @@ namespace Assets.PixelCrew.Creatures
 
         public void SetSpeed(int speed) => _speed = speed;
         public void ResetSpeed() { _speed = _startSpeed; }
+        public int GetSpeed() => _speed;
 
         protected virtual void Update()
         {

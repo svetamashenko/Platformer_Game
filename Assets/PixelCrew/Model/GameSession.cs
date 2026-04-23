@@ -3,13 +3,18 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
 using PixelCrew.Model.Data;
+using Assets.PixelCrew.Model.Data;
 
 namespace PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] private PlayerData _data; private readonly Dictionary<string, PlayerData> _storage = new Dictionary<string, PlayerData>(); public PlayerData Data => _data; private string _currentScene;
+        [SerializeField] private PlayerData _data;
+        private readonly Dictionary<string, PlayerData> _storage = new Dictionary<string, PlayerData>();
+        public PlayerData Data => _data;
+        private string _currentScene;
 
+        public QuickInventoryModel QuickInventory { get; private set; }
 
         private void Awake()
         {
@@ -21,8 +26,14 @@ namespace PixelCrew.Model
                 return;
             }
             DontDestroyOnLoad(gameObject);
+            InitModels();
             UpdateScene();
             SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void InitModels()
+        {
+            QuickInventory = new QuickInventoryModel(Data);
         }
 
         private void LoadHud()

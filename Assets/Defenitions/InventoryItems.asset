@@ -14,14 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - _id: Coin
-    IsNonStackable: 1
     MaxStack: 0
+    _icon: {fileID: -2322180950842035098, guid: 3bc0044924338644a97827f106515d07,
+      type: 3}
+    _tags: 00000000
   - _id: Sword
-    IsNonStackable: 0
     MaxStack: 0
+    _icon: {fileID: 21300000, guid: ba480cd3abd64cb449a01100f3e02a58, type: 3}
+    _tags: 0100000000000000
   - _id: Key
-    IsNonStackable: 0
     MaxStack: 0
-  - _id: HealthPotion
-    IsNonStackable: 0
+    _icon: {fileID: -855298285791758126, guid: 630c0b5f77996f2419b1a84b0a5eebd6, type: 3}
+    _tags: 00000000
+  - _id: HealthPotion5
     MaxStack: 0
+    _icon: {fileID: 1060510213531972308, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
+    _tags: 000000000100000002000000
+  - _id: PearlProjectile
+    MaxStack: 0
+    _icon: {fileID: -855298285791758126, guid: 650b81eb9b2ba954595a52dad695d3cf, type: 3}
+    _tags: 000000000200000001000000
+  - _id: HealthPotion1
+    MaxStack: 0
+    _icon: {fileID: 9003551563866706664, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
+    _tags: 000000000100000002000000
+  - _id: SpeedPotion
+    MaxStack: 0
+    _icon: {fileID: -8967779922491812719, guid: dbd7ee08107cc44429c66c7d31c8074d,
+      type: 3}
+    _tags: 000000000100000002000000

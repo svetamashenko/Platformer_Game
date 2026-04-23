@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace PixelCrew.Components.GoBased
@@ -11,14 +12,21 @@ namespace PixelCrew.Components.GoBased
         [ContextMenu("Spawn")]
         public GameObject Spawn()
         {
+            if (_prefab == null) return null;
+
             var instantiate = Instantiate(_prefab, _target.position, Quaternion.identity);
             instantiate.transform.localScale = _target.lossyScale;
             return instantiate;
         }
+
         public void SpawnObject()
         {
-            var instantiate = Instantiate(_prefab, _target.position, Quaternion.identity);
-            instantiate.transform.localScale = _target.lossyScale;
+            Spawn();
+        }
+
+        internal void SetPrefab(GameObject prefab)
+        {
+            _prefab = prefab;
         }
     }
 }

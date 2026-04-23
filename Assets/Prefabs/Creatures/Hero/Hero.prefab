@@ -5223,6 +5223,7 @@ MonoBehaviour:
   _disarmed: {fileID: 9100000, guid: 5dae801e52af0544395a0b0e8daa8c0d, type: 2}
   _coinsParticles: {fileID: 1467051689}
   _interactionCheck: {fileID: 4010939630052083715}
+  _throwSpawner: {fileID: 4927704119791241948}
 --- !u!114 &219267967784211569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5354,6 +5355,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 59a59656-846e-4213-9bb7-04227b3d87c7
     m_ActionName: Hero/UsePotion[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1021830197}
+        m_MethodName: OnNextItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d76545ff-6596-4137-849d-d29454598761
+    m_ActionName: Hero/NextItem[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5484,7 +5500,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maxHealth: 9
+  _maxHealth: 10
 --- !u!114 &4269011270883501845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5513,7 +5529,7 @@ MonoBehaviour:
   _platformPrefab: {fileID: 2066182702043665368, guid: 37a9731681aa0274f852b5de95e806f9,
     type: 3}
   _gridSize: 1
-  _collisionCheckRadius: 0.6
+  _collisionCheckRadius: 0
   _obstacleMask:
     serializedVersion: 2
     m_Bits: 256
@@ -5735,7 +5751,7 @@ GameObject:
   - component: {fileID: 1138824638541567464}
   - component: {fileID: 4927704119791241948}
   m_Layer: 0
-  m_Name: ThrowSwordSpawnPosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

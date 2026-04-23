@@ -6,6 +6,10 @@ using UnityEditor.Animations;
 using UnityEngine;
 using Assets.PixelCrew.Creatures;
 using PixelCrew.Model;
+using PixelCrew.Components.GoBased;
+using PixelCrew.Model.Definitions;
+using Assets.PixelCrew.Model.Definitions;
+using PixelCrew.Model.Data;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -20,15 +24,32 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private ParticleSystem _coinsParticles;
         [SerializeField] private CheckCircleOverlap _interactionCheck;
 
+        [SerializeField] private SpawnComponent _throwSpawner;
+
         private bool _allowDoubleJump;
         private GameSession _session;
         private HealthComponent _health;
 
         private const float AnimationDuration = 0.16f;
 
-        private int SwordCount => _session.Data.Inventory.Count("Sword");
+        private const string SwordId = "Sword";
+        private int SwordCount => _session.Data.Inventory.Count(SwordId);
+
         private int CoinCount => _session.Data.Inventory.Count("Coin");
-        private int Potions => _session.Data.Inventory.Count("HealthPotion");
+        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+        private int ThrowableCount => _session.QuickInventory.SelectedItem.Value;
+
+        private bool CanThrow
+        {
+            get
+            {
+                if (SelectedItemId == SwordId)
+                    return SwordCount > 1;
+
+                var def = DefsFacade.I.Items.Get(SelectedItemId);
+                return def.HasTag(ItemTag.Throwable);
+            }
+        }
 
         private void Start()
         {
@@ -55,7 +76,7 @@ namespace PixelCrew.Creatures.Hero
             {
                 Debug.Log($"Removed {-value} of {id}s.");
             }
-            if (id == "Sword")
+            if (id == SwordId)
             {
                 UpdateHeroWeapon();
             }
@@ -91,6 +112,11 @@ namespace PixelCrew.Creatures.Hero
             }
 
             return yVelocity;
+        }
+
+        public void NextItem()
+        {
+            _session.QuickInventory.SetNextItem();
         }
 
         public static void SaySomething()
@@ -154,13 +180,9 @@ namespace PixelCrew.Creatures.Hero
         public void Throw()
         {
 
-            if (SwordCount <= 0)
+            if (!CanThrow)
             {
-                Debug.Log("Hero hasn't got swords!");
-            }
-            else if (SwordCount == 1)
-            {
-                Debug.Log("Hero can't throw the last one sword!");
+                Debug.Log("Throwing is impossible!");
             }
             else if (_throwCooldown.IsReady)
             {
@@ -172,21 +194,24 @@ namespace PixelCrew.Creatures.Hero
         {
             Animator.SetTrigger(ThrowKey);
             _throwCooldown.Reset();
-            _session.Data.Inventory.Remove("Sword", 1);
-            Debug.Log($"Hero has {SwordCount} swords.");
+            Debug.Log($"Hero has {ThrowableCount} projectiles of current type.");
         }
 
         public void OnThrowApplying()
         {
             Sounds.Play("Range");
-            Particles.Spawn("Throw");
+            var throwableId = SelectedItemId;
+            var throwableDef = DefsFacade.I.ThrowableItems.Get(throwableId);
+            _throwSpawner.SetPrefab(throwableDef.Projectile);
+            _throwSpawner.Spawn();
+            _session.Data.Inventory.Remove(throwableId, 1);
         }
 
         public void ThrowMultiple(int numberOfSwords)
         {
-            if (SwordCount <= 1) return;
+            if (ThrowableCount <= 1) return;
 
-            int maxPossible = Mathf.Min(numberOfSwords, SwordCount - 1);
+            int maxPossible = Mathf.Min(numberOfSwords, SelectedItemId == SwordId ? ThrowableCount - 1 : ThrowableCount);
 
             if (maxPossible <= 0) return;
 
@@ -210,14 +235,49 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
-        public void ApplyHealing(int healing)
+        public void UseSelectedItem()
         {
-            if (Potions > 0)
+            var selectedItem = _session.QuickInventory.SelectedItem;
+            if (selectedItem == null) return;
+
+            var itemId = selectedItem.Id;
+
+            if (itemId.StartsWith("HealthPotion"))
             {
-                Sounds.Play("Drink");
-                _health.ModifyHealth(healing);
-                _session.Data.Inventory.Remove("HealthPotion", 1);
+                var healingAmount = GetHealingFromPotionId(itemId);
+                if (healingAmount > 0 && _session.Data.Inventory.Count(itemId) > 0)
+                {
+                    Sounds.Play("Drink");
+                    _health.ModifyHealth(healingAmount);
+                    _session.Data.Inventory.Remove(itemId, 1);
+                }
             }
+            else if (itemId.StartsWith("SpeedPotion"))
+            {
+                if (_session.Data.Inventory.Count(itemId) > 0)
+                {
+                    Sounds.Play("Drink");
+
+                    var speedEffect = new GameObject("SpeedEffect");
+                    speedEffect.transform.SetParent(transform);
+                    var speedComponent = speedEffect.AddComponent<SpeedUpComponent>();
+                    speedComponent.Activate(this);
+
+                    _session.Data.Inventory.Remove(itemId, 1);
+                }
+            }
+        }
+
+        private int GetHealingFromPotionId(string potionId)
+        {
+            if (potionId == "HealthPotion1") return 1;
+            if (potionId == "HealthPotion5") return 5;
+            return 0;
+        }
+
+        public InventoryItemData GetSelectedItem()
+        {
+            return _session.QuickInventory.SelectedItem;
         }
     }
 }

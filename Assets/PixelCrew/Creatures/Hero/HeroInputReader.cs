@@ -8,7 +8,6 @@ namespace PixelCrew.Creatures.Hero
     {
         [SerializeField] private Hero _hero;
         [SerializeField] private PlatformGeneratorComponent _platformGenerator;
-        [SerializeField] private int _healingOfPotion = 5;
 
         private float _pressStartTime;
         private const float _longPressThreshold = 1f;
@@ -76,11 +75,20 @@ namespace PixelCrew.Creatures.Hero
                 _hero.Attack();
             }
         }
+
         public void OnUsePotion(InputAction.CallbackContext context)
         {
             if (context.canceled)
             {
-                _hero.ApplyHealing(_healingOfPotion);
+                _hero.UseSelectedItem();
+            }
+        }
+
+        public void OnNextItem(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.NextItem();
             }
         }
     }

@@ -12,7 +12,10 @@ namespace PixelCrew.Components.Health
         public void Apply(GameObject target)
         {
             var health = GetHealth(target);
-            health.ModifyHealth(_healthModifier);
+            if (health != null)
+            {
+                health.ModifyHealth(_healthModifier);
+            }
         }
 
         public void OnAnimationEnd() => Destroy(gameObject);

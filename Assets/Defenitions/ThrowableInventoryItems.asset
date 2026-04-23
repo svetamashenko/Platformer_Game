@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a009e149979834d9f9fa10c844daa1, type: 3}
+  m_Name: ThrowableInventoryItems
+  m_EditorClassIdentifier: 
+  _items:
+  - _id: Sword
+    _projectile: {fileID: 772922483023492924, guid: d1a74aacb95cdbc48ad68534911cd2d6,
+      type: 3}
+  - _id: PearlProjectile
+    _projectile: {fileID: 7494877384132361720, guid: 659cb9aa5cef452488c9341f1b59f92b,
+      type: 3}
+  - _id: HealthPotion5
+    _projectile: {fileID: 1405745101848879750, guid: 114f4492af7479449a65f3ed9fac9852,
+      type: 3}
+  - _id: HealthPotion1
+    _projectile: {fileID: 1405745101848879750, guid: af545a7f99241f941b2870b8d1037365,
+      type: 3}
+  - _id: SpeedPotion
+    _projectile: {fileID: 1405745101848879750, guid: 14aba0d8ea4c4fa4d8ec68af224a2b6a,
+      type: 3}

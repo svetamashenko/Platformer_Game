@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1764508560}
   m_Layer: 0
   m_Name: HealthPotion
-  m_TagString: SfxAudioSource
+  m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 2040253903
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2011574832808370117, guid: ef9cb91f68d222b489c56a2865c0acf9,
+  m_Sprite: {fileID: -2052632503483515486, guid: 66e1834988555b442ab54c0138d717fa,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,13 +135,13 @@ MonoBehaviour:
   - Name: rounding
     Loop: 1
     Sprites:
-    - {fileID: 2011574832808370117, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: -8438763151253471919, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: -7587008787810219046, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: 950379908824699032, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: -512142692958456438, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: 8745225756722806956, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: -7481350877133238684, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: -2052632503483515486, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
+    - {fileID: 2418195604481730243, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
+    - {fileID: -5367725609082462120, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
+    - {fileID: -7957439678348139406, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
+    - {fileID: -1371583670539123917, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
+    - {fileID: 1263123236973523308, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
+    - {fileID: 2785581531642825347, guid: 66e1834988555b442ab54c0138d717fa, type: 3}
     AllowNext: 1
     NextStateName: is_used
     OnComplete:
@@ -150,10 +150,10 @@ MonoBehaviour:
   - Name: is_used
     Loop: 0
     Sprites:
-    - {fileID: 6040734443530017722, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: 8167133005111728920, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: 2014349484240403859, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: 6326803469982491369, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: -9109193455498650594, guid: dbd7ee08107cc44429c66c7d31c8074d, type: 3}
+    - {fileID: -5180601358658520723, guid: dbd7ee08107cc44429c66c7d31c8074d, type: 3}
+    - {fileID: -539795818109514093, guid: dbd7ee08107cc44429c66c7d31c8074d, type: 3}
+    - {fileID: 1923304157394860812, guid: dbd7ee08107cc44429c66c7d31c8074d, type: 3}
     AllowNext: 0
     NextStateName: 
     OnComplete:
@@ -249,7 +249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dc5be4b9368be4cbe6fd6881876c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds:
   - _id: collect
     _clip: {fileID: 8300000, guid: be766eb4c8b127e439752ced8e517a63, type: 3}
