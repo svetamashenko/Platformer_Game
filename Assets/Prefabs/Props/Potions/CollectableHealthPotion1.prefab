@@ -151,10 +151,10 @@ MonoBehaviour:
   - Name: is_used
     Loop: 0
     Sprites:
-    - {fileID: 6040734443530017722, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: 8167133005111728920, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: 2014349484240403859, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
-    - {fileID: 6326803469982491369, guid: ef9cb91f68d222b489c56a2865c0acf9, type: 3}
+    - {fileID: -9109193455498650594, guid: dbd7ee08107cc44429c66c7d31c8074d, type: 3}
+    - {fileID: -5180601358658520723, guid: dbd7ee08107cc44429c66c7d31c8074d, type: 3}
+    - {fileID: -539795818109514093, guid: dbd7ee08107cc44429c66c7d31c8074d, type: 3}
+    - {fileID: 1923304157394860812, guid: dbd7ee08107cc44429c66c7d31c8074d, type: 3}
     AllowNext: 0
     NextStateName: 
     OnComplete:
