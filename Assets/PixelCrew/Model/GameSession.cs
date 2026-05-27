@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PixelCrew.Model.Data;
 using Assets.PixelCrew.Model.Data;
+using Assets.PixelCrew.Utils.Disposables;
 
 namespace PixelCrew.Model
 {
@@ -13,6 +14,8 @@ namespace PixelCrew.Model
         private readonly Dictionary<string, PlayerData> _storage = new Dictionary<string, PlayerData>();
         public PlayerData Data => _data;
         private string _currentScene;
+
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public QuickInventoryModel QuickInventory { get; private set; }
 
@@ -34,6 +37,7 @@ namespace PixelCrew.Model
         private void InitModels()
         {
             QuickInventory = new QuickInventoryModel(Data);
+            _trash.Retain(QuickInventory);
         }
 
         private void LoadHud()
@@ -44,6 +48,7 @@ namespace PixelCrew.Model
         private void OnDestroy()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            _trash.Dispose();
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

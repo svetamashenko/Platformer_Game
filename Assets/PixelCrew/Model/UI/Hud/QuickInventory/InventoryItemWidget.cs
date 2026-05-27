@@ -26,7 +26,8 @@ namespace Assets.PixelCrew.Model.UI.Hud.QuickInventory
         private void Start()
         {
             var session = FindObjectOfType<GameSession>();
-            session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnIndexChanged);
+            var index = session.QuickInventory.SelectedIndex;
+            _trash.Retain(index.SubscribeAndInvoke(OnIndexChanged));
         }
 
         public void SetData(InventoryItemData item, int index)
@@ -36,6 +37,11 @@ namespace Assets.PixelCrew.Model.UI.Hud.QuickInventory
             var def = DefsFacade.I.Items.Get(item.Id);
             _icon.sprite = def.Icon;
             _value.text = !def.HasTag(Definitions.ItemTag.Stackable) ? string.Empty : item.Value.ToString();
+        }
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
         }
     }
 }

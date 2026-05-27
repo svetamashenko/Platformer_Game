@@ -714,42 +714,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 159409759}
     m_Modifications:
-    - target: {fileID: 580632926, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 580632926, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 580632926, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1273237991}
-    - target: {fileID: 580632926, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 580632926, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Check
-      objectReference: {fileID: 0}
-    - target: {fileID: 580632926, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 980623357, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: _sceneName
-      value: Level3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1667898968, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4949d88e1eed1c14e97678950f366563, type: 3}
-    - target: {fileID: 1667898968, guid: 23c61025b641df54599281374d4ffef3, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8920290176795744210, guid: 23c61025b641df54599281374d4ffef3,
         type: 3}
       propertyPath: m_RootOrder
@@ -4252,18 +4216,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4318819d7647074088baf632715b7b3, type: 3}
---- !u!114 &1273237991 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 280599380, guid: 23c61025b641df54599281374d4ffef3,
-    type: 3}
-  m_PrefabInstance: {fileID: 492851214}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d92389de948a564d8a59193809bc592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1327344536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5789,7 +5741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841321233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.894272, y: 2.2051868, z: 0}
+  m_LocalPosition: {x: -5.894511, y: 2.2051868, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 222560762}

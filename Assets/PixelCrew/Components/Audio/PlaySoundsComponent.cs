@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Specialized;
 using UnityEngine;
 
 public class PlaySoundsComponent : MonoBehaviour

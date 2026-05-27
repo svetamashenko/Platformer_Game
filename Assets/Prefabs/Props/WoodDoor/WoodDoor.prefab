@@ -153,8 +153,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 580632925}
-        m_MethodName: Switch
+      - m_Target: {fileID: 280599380}
+        m_MethodName: Check
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a79805cc09452849a868e736a54a575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: Level2
+  _sceneName: Level3
 --- !u!114 &280599380
 MonoBehaviour:
   m_ObjectHideFlags: 0
