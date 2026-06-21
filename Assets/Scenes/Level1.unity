@@ -9316,11 +9316,11 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - Text: Come and show me the 20 coins!
+    - Text: '#d_door_level1_1'
       IsPlayer: 0
-    - Text: That's how I'll know you're worthy!
+    - Text: '#d_door_level1_2'
       IsPlayer: 0
-    - Text: Challenge accepted!
+    - Text: '#d_door_level1_3'
       IsPlayer: 1
   _external: {fileID: 11400000, guid: eb6c4a5e66e4d8544bf5d08c483b11c2, type: 2}
   _npcAvatar: {fileID: 0}

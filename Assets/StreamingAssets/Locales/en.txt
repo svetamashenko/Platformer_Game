@@ -1,0 +1,17 @@
+menu_title	menu
+button_start	start
+button_option	options
+button_exit	exit
+selected_language	selected language is {0}
+button_languages	languages
+main_menu_title	main menu
+music_slider	music:
+sfx_slider	SFX:
+d_pink_star1	I'll ride with you!
+d_pink_star2	To the Maldives, please!
+d_pink_star3	You didn't pay!
+d_pink_star4	I'll give you 1 star in the app!
+d_door_level1_1	Come and show me the 20 coins!
+d_door_level1_2	That's how I'll know you're worthy!
+d_door_level1_3	Challenge accepted!
+d_continue	continue...

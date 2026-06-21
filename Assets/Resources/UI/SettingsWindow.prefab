@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 1628279390}
   - component: {fileID: 1628279392}
   - component: {fileID: 1628279391}
+  - component: {fileID: 2909830581479574681}
   m_Layer: 5
   m_Name: 'Music:'
   m_TagString: Untagged
@@ -352,6 +353,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Music:'
+--- !u!114 &2909830581479574681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628279389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd642fe2c485f7540bd1df54dbd7aaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: music_slider
+  _capitalize: 0
+  _capitalizeFirstLetter: 1
 --- !u!1 &1658501293
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +750,7 @@ GameObject:
   - component: {fileID: 1773578944154968731}
   - component: {fileID: 1773578944154968729}
   - component: {fileID: 1773578944154968728}
+  - component: {fileID: 690327609451780453}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -801,6 +818,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Options
+--- !u!114 &690327609451780453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773578944154968730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd642fe2c485f7540bd1df54dbd7aaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_option
+  _capitalize: 0
+  _capitalizeFirstLetter: 1
 --- !u!1 &1773578944198635438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1436,7 @@ GameObject:
   - component: {fileID: 7537757230248641545}
   - component: {fileID: 2314928174844533337}
   - component: {fileID: 5043129674817139970}
+  - component: {fileID: 2049760120449000821}
   m_Layer: 5
   m_Name: 'SFX:'
   m_TagString: Untagged
@@ -1471,6 +1504,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'SFX:'
+--- !u!114 &2049760120449000821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069043609980346621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd642fe2c485f7540bd1df54dbd7aaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: sfx_slider
+  _capitalize: 0
+  _capitalizeFirstLetter: 0
 --- !u!1 &6490789525155598905
 GameObject:
   m_ObjectHideFlags: 0

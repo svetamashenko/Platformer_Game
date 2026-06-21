@@ -1,0 +1,17 @@
+menu_title	меню
+button_start	старт
+button_option	настройки
+button_exit	выход
+selected_language	выбран язык: {0}
+button_languages	языки
+main_menu_title	главное меню
+music_slider	музыка:
+sfx_slider	SFX:
+d_pink_star1	Я прокачусь с вами!
+d_pink_star2	На Мальдивы, пожалуйста!
+d_pink_star3	Вы не заплатили!
+d_pink_star4	Я поставлю вам 1 звезду в приложении!
+d_door_level1_1	Приди и покажи мне 20 монет!
+d_door_level1_2	Только так я узнаю, что ты достоин!
+d_door_level1_3	Вызов принят!
+d_continue	далее...

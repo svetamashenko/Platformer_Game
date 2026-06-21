@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a2fa0a0cf4d20d4aa10bf6f72f8dad7
+guid: 3f1062638e19d1d4c939a614b10d5427
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6525764384024910848
-    second: item-selection_0
+      213: 6723963429988506304
+    second: Spikes
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -90,22 +90,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: item-selection_0
+      name: Spikes
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 12
-        height: 12
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 1, z: 1, w: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00c53bdd12c209a50800000000000000
-      internalID: 6525764384024910848
+      spriteID: 0ca9e2f4d11505d50800000000000000
+      internalID: 6723963429988506304
       vertices: []
       indices: 
       edges: []

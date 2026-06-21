@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _sentences:
-    - Text: I'll ride you!
+    - Text: '#d_pink_star1'
       IsPlayer: 0
-    - Text: To the Maldives, please!
+    - Text: '#d_pink_star2'
       IsPlayer: 0
-    - Text: You didn't pay!
+    - Text: '#d_pink_star3'
       IsPlayer: 1
-    - Text: I'll give you 1 star in the app!
+    - Text: '#d_pink_star4'
       IsPlayer: 0

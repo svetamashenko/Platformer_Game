@@ -1,0 +1,18 @@
+menu_title	menu
+button_start	lancement
+button_option	réglages
+button_exit	sortie
+selected_language	la langue sélectionnée est {0}
+button_languages	langues
+main_menu_title	menu principal
+music_slider	musique:
+sfx_slider	SFX:
+d_pink_star1	Je vais pomper avec vous!
+d_pink_star2	Aux Maldives, s'il vous plaît!
+d_pink_star3	Vous n'avez pas payé!
+d_pink_star4	Je vais vous mettre 1 étoile dans l'application!
+d_door_level1_1	Viens me montrer 20 pièces!
+d_door_level1_2	C'est comme ça que je saurai que tu es digne!
+d_door_level1_3	Défi accepté!
+d_continue	continuer...
+	

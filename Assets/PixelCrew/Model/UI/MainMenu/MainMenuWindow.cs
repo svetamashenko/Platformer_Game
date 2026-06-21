@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEditor;
+﻿using Assets.PixelCrew.Utils;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -39,6 +39,11 @@ namespace Assets.PixelCrew.Components.UI.MainMenu
 #endif
             };
             Close();
+        }
+
+        public void OnLanguages()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
         }
 
         public void OpenMenu()

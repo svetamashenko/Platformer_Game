@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01064f767e775834e9b61caf17ddb569, type: 3}
+  m_Name: en
+  m_EditorClassIdentifier: 
+  _source: 0
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vRyKvuZFiXrINOeerBzyNmhkoev9a1Zy3IKgg85_2S1wHBUjNcdKY8m_jFGZZVwwGrlnJOSTojHZ3t3/pub?gid=0&single=true&output=tsv
+  _fileName: en
+  _localeitems:
+  - Key: menu_title
+    Value: menu
+  - Key: button_start
+    Value: start
+  - Key: button_option
+    Value: options
+  - Key: button_exit
+    Value: exit
+  - Key: selected_language
+    Value: selected language is {0}
+  - Key: button_languages
+    Value: languages
+  - Key: main_menu_title
+    Value: main menu
+  - Key: music_slider
+    Value: 'music:'
+  - Key: sfx_slider
+    Value: 'SFX:'
+  - Key: d_pink_star1
+    Value: I'll ride with you!
+  - Key: d_pink_star2
+    Value: To the Maldives, please!
+  - Key: d_pink_star3
+    Value: You didn't pay!
+  - Key: d_pink_star4
+    Value: I'll give you 1 star in the app!
+  - Key: d_door_level1_1
+    Value: Come and show me the 20 coins!
+  - Key: d_door_level1_2
+    Value: That's how I'll know you're worthy!
+  - Key: d_door_level1_3
+    Value: Challenge accepted!
+  - Key: d_continue
+    Value: continue...
