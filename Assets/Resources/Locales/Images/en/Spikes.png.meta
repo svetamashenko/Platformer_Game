@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: fd500f65ed2c73d4092b0d6618883124
+guid: c81ba2ccd3bad51428256a4128369a59
 TextureImporter:
   internalIDToNameTable:
+  - first:
+      213: -2480060180074359257
+    second: Spikes
   - first:
       213: 6723963429988506304
     second: Spikes
