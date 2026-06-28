@@ -11,7 +11,7 @@ namespace PixelCrew.Components.LevelManagement
             var session = FindObjectOfType<GameSession>();
             if (session != null)
             {
-                session.ResetToInitialState();
+                session.LoadLastSave();
             }
 
             string currentSceneName = SceneManager.GetActiveScene().name;

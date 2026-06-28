@@ -5,33 +5,60 @@ using System.Linq;
 using PixelCrew.Model.Data;
 using Assets.PixelCrew.Model.Data;
 using Assets.PixelCrew.Utils.Disposables;
+using Assets.PixelCrew.Components.LevelManagement;
 
 namespace PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private PlayerData _data;
-        private readonly Dictionary<string, PlayerData> _storage = new Dictionary<string, PlayerData>();
+        [SerializeField] private string _defaultCheckPoint;
         public PlayerData Data => _data;
-        private string _currentScene;
+        private PlayerData _save;
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public QuickInventoryModel QuickInventory { get; private set; }
 
+        private readonly List<string> _checkpoints = new List<string>();
+
         private void Awake()
         {
-            LoadHud();
+            var existingSession = GetExistSession();
 
-            if (FindObjectOfType<GameSession>() != this)
+            if (existingSession != null)
             {
+                existingSession.StartSession(_defaultCheckPoint);
                 Destroy(gameObject);
-                return;
             }
-            DontDestroyOnLoad(gameObject);
-            InitModels();
-            UpdateScene();
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            else
+            {
+                Save();
+                InitModels();
+                DontDestroyOnLoad(this);
+                StartSession(_defaultCheckPoint);
+            }
+        }
+
+        private void StartSession(string defaultCheckPoint)
+        {
+            SetChecked(defaultCheckPoint);
+            LoadHud();
+            SpawnHero();
+        }
+
+        private void SpawnHero()
+        {
+            var checkpoints = FindObjectsOfType<CheckPointComponent>();
+            var lastCheckPoint = _checkpoints.Last();
+            foreach (var checkPoint in checkpoints)
+            {
+                if (checkPoint.Id == lastCheckPoint)
+                {
+                    checkPoint.SpawnHero();
+                    break;
+                }
+            }
         }
 
         private void InitModels()
@@ -47,36 +74,45 @@ namespace PixelCrew.Model
 
         private void OnDestroy()
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
             _trash.Dispose();
         }
 
-        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        private GameSession GetExistSession()
         {
-            UpdateScene();
+            var sessions = FindObjectsOfType<GameSession>();
+            foreach (var gameSession in sessions)
+            {
+                if (gameSession != this)
+                    return gameSession;
+            }
+
+            return null;
         }
 
-        private void UpdateScene()
+        public void Save()
         {
-            _currentScene = SceneManager.GetActiveScene().name;
+            _save = Data.Clone();
+        }
 
-            var keysToRemove = _storage.Keys.Where(k => k != _currentScene).ToList();
-            foreach (var key in keysToRemove)
-                _storage.Remove(key);
+        public void LoadLastSave()
+        {
+            _data = _save.Clone();
+            _trash.Dispose();
+            InitModels();
+        }
 
-            if (!_storage.ContainsKey(_currentScene))
+        public bool IsChecked(string id)
+        {
+            return _checkpoints.Contains(id);
+        }
+
+        public void SetChecked(string id)
+        {
+            if (!_checkpoints.Contains(id))
             {
-                _storage[_currentScene] = _data.Clone();
+                Save();
+                _checkpoints.Add(id);
             }
         }
-
-        public void ResetToInitialState()
-        {
-            if (_storage.TryGetValue(_currentScene, out var initial))
-            {
-                _data.CopyFrom(initial);
-            }
-        }
-
     }
 }
